@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../ui/widgets/snack_bar.dart';
+
+import '../../ui/widgets/snack_bar.dart';
 import 'otp_state.dart';
 
 class OTPCubit extends Cubit<OTPState> {

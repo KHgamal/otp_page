@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
 
-import '../../controller/otp_cubit.dart';
+import '../../controller/otp/otp_cubit.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({

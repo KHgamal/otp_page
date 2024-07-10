@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:otp_page/otp/controller/otp_cubit.dart';
 import 'package:otp_page/otp/ui/views/otp_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'otp/controller/otp/otp_cubit.dart';
+import 'otp/controller/theme/theme_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeNotifier(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -12,18 +18,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false ,
+   
+    return Consumer<ThemeNotifier>(
+        builder: (context, themeNotifier, child) {
+         return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
-        useMaterial3: false,
-      ),
+      theme:themeNotifier.currentTheme,
       home: BlocProvider(
-        create: (context) => OTPCubit(),
-        child: const OtpScreen()),
+          create: (context) => OTPCubit(), child: const OtpScreen()),
     );
+        });
   }
 }
-
-

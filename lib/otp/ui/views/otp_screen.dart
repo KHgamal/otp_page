@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:otp_page/otp/controller/otp/otp_state.dart';
 import 'package:otp_page/otp/ui/widgets/otp.dart';
 import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
+import 'package:otp_page/otp/ui/widgets/theme_button.dart';
 
-import '../../controller/otp_cubit.dart';
-import '../../controller/otp_state.dart';
+import '../../controller/otp/otp_cubit.dart';
 import '../widgets/custom_button.dart';
 
 class OtpScreen extends StatelessWidget {
@@ -23,6 +24,11 @@ class OtpScreen extends StatelessWidget {
                    child: Column(
                      crossAxisAlignment: CrossAxisAlignment.center,
                      children: [
+                     const Row(
+                        children: [
+                           ThemeWidget(),
+                        ],
+                      ),
                        Image.asset('assets/images/img.png', width: 100,height: 100,),
                        const  Text('رمز التحقق', style: TextStyle(fontSize: 22, color: Colors.red)),
                        const SizedBox(height: 14),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../controller/otp_cubit.dart';
+import '../../controller/otp/otp_cubit.dart';
 
 class Otp extends StatelessWidget {
   const Otp({super.key,});
