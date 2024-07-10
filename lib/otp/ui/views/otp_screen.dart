@@ -13,7 +13,6 @@ class OtpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-    final otpController= BlocProvider.of<OTPCubit>(context).otpController ;
     return  SafeArea(
       child: Scaffold(
         body: Padding(
@@ -29,7 +28,7 @@ class OtpScreen extends StatelessWidget {
                        const SizedBox(height: 14),
                        const Text('ادخل رمز التحقق المرسل على جوالك', style: TextStyle(fontSize: 22, color: Colors.grey)),
                        const SizedBox(height: 30),
-                       Otp(otpController: otpController,),
+                       const Otp(),
                        const SizedBox(height: 50),
                        BlocBuilder<OTPCubit, OTPState>(
                              builder: (context, state){
@@ -40,7 +39,7 @@ class OtpScreen extends StatelessWidget {
                            }
                          return Column(
                          children: [
-                           CustomButton(formKey: formKey, otpController: otpController),
+                           CustomButton(formKey: formKey,),
                            const SizedBox(height: 20),
                           state is ResendState && state.countdown > 0
                       ? Text('إعادة ارسال بعد ${state.countdown} ثانية')

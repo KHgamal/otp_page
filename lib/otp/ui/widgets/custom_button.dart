@@ -8,14 +8,13 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.formKey,
-    required this.otpController,
   });
 
   final GlobalKey<FormState> formKey;
-  final TextEditingController otpController;
 
   @override
   Widget build(BuildContext context) {
+    final oTPCubit=context.read<OTPCubit>();
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
       backgroundColor: const Color.fromARGB(255, 6, 18, 95),
@@ -23,7 +22,7 @@ class CustomButton extends StatelessWidget {
               ),
         onPressed: () {
           if (formKey.currentState!.validate()) {
-        context.read<OTPCubit>().verifyOTP(otpController.text.trim(),context);
+            oTPCubit.verifyOTP(oTPCubit.otpController.text.trim(),context);
          }
          else {
          showSnackBar(context,'يرجى إدخال قيمة صحيحة');

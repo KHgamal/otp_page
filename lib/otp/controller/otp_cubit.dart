@@ -29,12 +29,12 @@ void _startTimer() {
     
     _resendTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       
-      if (45-timer.tick > 0) {
+      if (45-timer.tick >= 0) {
         emit(ResendState( 45-timer.tick));
       } else {
         _resendTimer.cancel();
         _canResend = true;
-        emit(InitialState());
+      //  emit(InitialState());
       }
     });
   }

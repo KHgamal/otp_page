@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../controller/otp_cubit.dart';
+
 class Otp extends StatelessWidget {
-  const Otp({super.key, required this.otpController});
-  final TextEditingController otpController;
+  const Otp({super.key,});
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -18,7 +21,7 @@ class Otp extends StatelessWidget {
           return null;
           },
         showCursor: false,
-        controller: otpController,
+        controller: context.read<OTPCubit>().otpController,
         keyboardType: TextInputType.number,
         appContext: context,
         length: 4,
