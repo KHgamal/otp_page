@@ -32,22 +32,23 @@ class OtpScreen extends StatelessWidget {
                        const SizedBox(height: 50),
                        CustomButton(formKey: formKey,),
                        const SizedBox(height: 20),
-                       BlocBuilder<OTPCubit, OTPState>(
-                             builder: (context, state){
+                       BlocConsumer<OTPCubit, OTPState>(
+                         listener: (context, state) {
                            if (state is VerifiedState) {
-                             WidgetsBinding.instance.addPostFrameCallback((_) {
-                             showSnackBar(context,'OTP verified successfully');
-                             });
+                               showSnackBar(context, 'OTP verified successfully');
                            }
-                         return state is ResendState && state.countdown > 0
-                                               ? Text('إعادة ارسال بعد ${state.countdown} ثانية')
-                                               : TextButton(
-                         onPressed: () {
-                           context.read<OTPCubit>().startResendTimer();
                          },
-                         child:const Text('إعادة ارسال'),
-                                                 );
-                             }),
+                         builder: (context, state) {
+                           return state is ResendState && state.countdown > 0
+                               ? Text('إعادة ارسال بعد ${state.countdown} ثانية')
+                               : TextButton(
+                             onPressed: () {
+                               context.read<OTPCubit>().startResendTimer();
+                             },
+                             child: const Text('إعادة ارسال'),
+                           );
+                         },
+                       ),
                      ],
                    ),
                  ),
