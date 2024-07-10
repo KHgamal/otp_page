@@ -34,7 +34,6 @@ void _startTimer() {
       } else {
         _resendTimer.cancel();
         _canResend = true;
-      //  emit(InitialState());
       }
     });
   }
