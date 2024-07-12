@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
 
+import '../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
 class CustomButton extends StatelessWidget {
@@ -26,10 +27,10 @@ class CustomButton extends StatelessWidget {
             otpBloc.add(OTPEvent.verifyOTP(otpBloc.otpController.text, context));
          }
          else {
-         showSnackBar(context,'يرجى إدخال قيمة صحيحة');
+         showSnackBar(context,S.of(context).Enter_valid_value);
              }
           },
-          child: const Text('تحقق'),
+          child:Text(S.of(context).verify),
         );
   }
 }

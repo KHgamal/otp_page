@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
 class Otp extends StatelessWidget {
@@ -14,9 +15,9 @@ class Otp extends StatelessWidget {
       child: PinCodeTextField(
         validator: (value){
           if (value ==null || value.isEmpty ) {
-            return 'field_is_required';
+            return S.of(context).field_is_required ;
           } else if (value.length != 4) {
-            return  'otp_length must be 4';
+            return S.of(context).otp_length ;
           }
           return null;
           },

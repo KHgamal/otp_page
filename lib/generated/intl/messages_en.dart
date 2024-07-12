@@ -24,15 +24,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Enter_valid_value":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid value"),
         "OTPVerifiedSuccessfully":
             MessageLookupByLibrary.simpleMessage("OTP verified successfully"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "enterOtpSent": MessageLookupByLibrary.simpleMessage(
             "Enter the verification code sent to your phone"),
+        "field_is_required":
+            MessageLookupByLibrary.simpleMessage("field is required"),
         "incorrectOtp": MessageLookupByLibrary.simpleMessage("Incorrect OTP"),
         "otpVerification":
             MessageLookupByLibrary.simpleMessage("OTP Verification"),
+        "otp_length":
+            MessageLookupByLibrary.simpleMessage("otp length must be 4"),
         "resend": MessageLookupByLibrary.simpleMessage("resend"),
         "resendIn": m0,
         "verify": MessageLookupByLibrary.simpleMessage("Verify")

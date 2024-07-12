@@ -139,6 +139,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter a valid value`
+  String get Enter_valid_value {
+    return Intl.message(
+      'Please enter a valid value',
+      name: 'Enter_valid_value',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `field is required`
+  String get field_is_required {
+    return Intl.message(
+      'field is required',
+      name: 'field_is_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `otp length must be 4`
+  String get otp_length {
+    return Intl.message(
+      'otp length must be 4',
+      name: 'otp_length',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
