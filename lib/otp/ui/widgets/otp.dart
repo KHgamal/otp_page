@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../controller/otp/otp_cubit.dart';
+import '../../controller/bloc/otp/otp_bloc.dart';
 
 class Otp extends StatelessWidget {
   const Otp({super.key,});
@@ -21,7 +21,7 @@ class Otp extends StatelessWidget {
           return null;
           },
         showCursor: false,
-        controller: context.read<OTPCubit>().otpController,
+        controller: context.read<OTPBloc>().otpController,
         keyboardType: TextInputType.number,
         appContext: context,
         length: 4,

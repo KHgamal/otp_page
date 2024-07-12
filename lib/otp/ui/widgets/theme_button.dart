@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:otp_page/otp/controller/bloc/preference/preference_event.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/theme/theme_provider.dart';
+import '../../controller/bloc/preference/preference_bloc.dart';
+
 
 class ThemeWidget extends StatelessWidget {
   const ThemeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+   final themeBloc = context.read<PreferenceBloc>();
     return IconButton(
-      onPressed: () => context.read<ThemeNotifier>().toggleTheme(),
-      icon: const Icon(Icons.sunny),);
+           onPressed: () {
+              bool isDarkTheme = themeBloc.state.isDarkTheme;
+              themeBloc.add(PreferenceEvent.changeTheme(!isDarkTheme));
+            },
+      icon: Icon(themeBloc.state.isDarkTheme?Icons.sunny:Icons.dark_mode),);
   }
 }

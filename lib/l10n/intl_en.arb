@@ -1,0 +1,11 @@
+ {
+  "otpVerification": "OTP Verification",
+  "enterOtpSent": "Enter the verification code sent to your phone",
+  "verify": "Verify",
+  "resend": "resend",
+  "resendIn": "Resend in {seconds} seconds",
+  "incorrectOtp": "Incorrect OTP",
+  "OTPVerifiedSuccessfully":"OTP verified successfully",
+  "english": "English",
+  "arabic": "Arabic"
+ }

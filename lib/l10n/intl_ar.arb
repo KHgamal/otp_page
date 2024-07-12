@@ -1,0 +1,11 @@
+{
+  "otpVerification": "رمز التحقق",
+  "enterOtpSent": "ادخل رمز التحقق المرسل على جوالك",
+  "verify": "تحقق",
+  "resend": "إعادة ارسال",
+  "resendIn": "إعادة ارسال بعد {seconds} ثانية",
+  "incorrectOtp": "رمز التحقق غير صحيح",
+  "OTPVerifiedSuccessfully":"تم التحقق من OTP بنجاح",
+  "english": "الإنجليزية",
+  "arabic": "العربية"
+}
