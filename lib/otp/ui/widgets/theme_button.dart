@@ -16,6 +16,6 @@ class ThemeWidget extends StatelessWidget {
               bool isDarkTheme = themeBloc.state.isDarkTheme;
               themeBloc.add(PreferenceEvent.changeTheme(!isDarkTheme));
             },
-      icon: Icon(themeBloc.state.isDarkTheme?Icons.sunny:Icons.dark_mode),);
+      icon: const Icon(Icons.sunny),);
   }
 }

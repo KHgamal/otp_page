@@ -8,6 +8,7 @@ import 'package:otp_page/generated/l10n.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final TextEditingController otpController = TextEditingController();
+   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
 
@@ -49,10 +50,10 @@ class OTPBloc extends Bloc<OTPEvent, OTPState> {
     });
   }
 
-/*   @override
+  @override
   Future<void> close() {
     otpController.dispose();
     _resendTimer?.cancel();
     return super.close();
-  } */
+  }
 }

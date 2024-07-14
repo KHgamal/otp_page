@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
               ],
               supportedLocales: S.delegate.supportedLocales,
-              title: 'Flutter Demo',
+              title: 'OTP Page',
               debugShowCheckedModeBanner: false,
                theme: state.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
                locale: Locale(state.locale),

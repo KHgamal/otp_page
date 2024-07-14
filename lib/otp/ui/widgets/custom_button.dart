@@ -9,10 +9,7 @@ import '../../controller/bloc/otp/otp_bloc.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
-    required this.formKey,
   });
-
-  final GlobalKey<FormState> formKey;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,7 @@ class CustomButton extends StatelessWidget {
       fixedSize: const Size(400, 45)
               ),
         onPressed: () {
-          if (formKey.currentState!.validate()) {
+          if (otpBloc.formKey.currentState!.validate()) {
             otpBloc.add(OTPEvent.verifyOTP(otpBloc.otpController.text, context));
          }
          else {
