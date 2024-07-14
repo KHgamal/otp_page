@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("otp length must be 4"),
         "resend": MessageLookupByLibrary.simpleMessage("resend"),
         "resendIn": m0,
+        "sub_title": MessageLookupByLibrary.simpleMessage("Host"),
+        "title": MessageLookupByLibrary.simpleMessage("Golden"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify")
       };
 }

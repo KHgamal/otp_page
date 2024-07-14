@@ -41,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "يجب أن يكون طول كلمة المرور 4"),
         "resend": MessageLookupByLibrary.simpleMessage("إعادة ارسال"),
         "resendIn": m0,
+        "sub_title": MessageLookupByLibrary.simpleMessage("هوست"),
+        "title": MessageLookupByLibrary.simpleMessage("قولدن"),
         "verify": MessageLookupByLibrary.simpleMessage("تحقق")
       };
 }

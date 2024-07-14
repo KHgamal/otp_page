@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
 
+import '../../../common/colors.dart';
 import '../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
@@ -16,7 +17,7 @@ class CustomButton extends StatelessWidget {
     final otpBloc=context.read<OTPBloc>();
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-      backgroundColor: const Color.fromARGB(255, 6, 18, 95),
+      backgroundColor: Colour.indigo(context) ,
       fixedSize: const Size(400, 45)
               ),
         onPressed: () {

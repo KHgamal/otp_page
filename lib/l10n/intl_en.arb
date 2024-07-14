@@ -1,4 +1,6 @@
  {
+  "title":"Golden",
+  "sub_title":"Host",
   "otpVerification": "OTP Verification",
   "enterOtpSent": "Enter the verification code sent to your phone",
   "verify": "Verify",

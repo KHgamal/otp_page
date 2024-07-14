@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Golden`
+  String get title {
+    return Intl.message(
+      'Golden',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Host`
+  String get sub_title {
+    return Intl.message(
+      'Host',
+      name: 'sub_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `OTP Verification`
   String get otpVerification {
     return Intl.message(
