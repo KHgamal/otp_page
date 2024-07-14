@@ -5,7 +5,7 @@ import 'preference_state.dart';
 
 class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
   PreferenceBloc()
-      : super(const PreferenceState(isDarkTheme: false, locale: 'en')) {
+      : super(const PreferenceState(isDarkTheme: true, locale: 'en')) {
     on<ChangeThemeEvent>(_onChangeTheme);
     on<ChangeLocaleEvent>(_onChangeLocale);
     _loadPreferences();
@@ -13,7 +13,7 @@ class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
 
   Future<void> _loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
-    final isDarkTheme = prefs.getBool('isDarkTheme') ?? false;
+    final isDarkTheme = prefs.getBool('isDarkTheme') ?? true;
     final locale = prefs.getString('locale') ?? 'en';
 
     emit(PreferenceState(isDarkTheme: isDarkTheme, locale: locale));

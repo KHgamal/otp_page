@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
 
-import '../../../common/colors.dart';
 import '../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
@@ -17,7 +16,7 @@ class CustomButton extends StatelessWidget {
     final otpBloc=context.read<OTPBloc>();
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-      backgroundColor: Colour.indigo(context) ,
+     backgroundColor: Theme.of(context).colorScheme.primary ,
       fixedSize: const Size(400, 45)
               ),
         onPressed: () {
@@ -28,7 +27,7 @@ class CustomButton extends StatelessWidget {
          showSnackBar(context,S.of(context).Enter_valid_value);
              }
           },
-          child:Text(S.of(context).verify),
+          child:Text(S.of(context).verify, style: TextStyle(color:Theme.of(context).colorScheme.onPrimary ),),
         );
   }
 }

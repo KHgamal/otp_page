@@ -6,6 +6,7 @@ import 'package:otp_page/otp/controller/bloc/preference/preference_bloc.dart';
 import 'package:otp_page/otp/controller/bloc/preference/preference_state.dart';
 import 'package:otp_page/otp/ui/views/otp_screen.dart';
 
+import 'common/gallery_theme.dart';
 import 'otp/controller/bloc/otp/otp_bloc.dart';
 
 void main() {
@@ -34,8 +35,8 @@ class MyApp extends StatelessWidget {
               supportedLocales: S.delegate.supportedLocales,
               title: 'OTP Page',
               debugShowCheckedModeBanner: false,
-               theme: state.isDarkTheme ? ThemeData.dark( useMaterial3: false,) 
-               : ThemeData.light( useMaterial3: false,),
+               theme: state.isDarkTheme ?GalleryThemeData.darkTheme
+               : GalleryThemeData.lightTheme,
                locale: Locale(state.locale),
               home: const OtpScreen(),
             );

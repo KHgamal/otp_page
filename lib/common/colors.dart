@@ -1,34 +1,19 @@
 import 'package:flutter/material.dart';
 
-bool isDarkTheme(context) =>  Theme.of(context).brightness == Brightness.dark;
-class Colour {
-    static Color indigo(BuildContext context) {
-    return isDarkTheme(context)
-        ? const Color.fromARGB(255, 205, 196, 240)
-        : const Color(0xff2C1D65);
-  }
+class AppColors {
+ static const Color darkIndigo = Color(0xff2C1D65);
+  static const Color lightIndigo = Color.fromARGB(255, 205, 196, 240);
 
-  static Color pink(BuildContext context) {
-    return isDarkTheme(context)
-        ? const Color.fromARGB(255, 238, 180, 206)
-        : const Color(0xffD70060);
-  }
+  static const Color darkPink = Color(0xffD70060);
+  static const Color lightPink = Color.fromARGB(255, 238, 180, 206);
 
-  static Color red(BuildContext context) { 
-    return  isDarkTheme(context)
-        ?const Color.fromARGB(255, 163, 118, 118)
-        : const Color(0xffAF0303);
-  }
+  static const Color lightRed = Color(0xffAF0303);
+  static const Color darkRed = Color.fromARGB(255, 163, 118, 118);
 
-  static Color grey(BuildContext context) { 
-   return isDarkTheme(context)
-        ? const Color.fromARGB(255, 227, 224, 224)
-        : const Color(0xff737373);
-  }
+  static const Color darkGrey = Color(0xff737373);
+  static const Color lightGrey = Color.fromARGB(255, 227, 224, 224);
 
-  static Color black(BuildContext context) {
-    return isDarkTheme(context)
-        ? Colors.white
-        : Colors.black;
-  }
+  static const Color darkBlack = Colors.black;
+  static const Color lightBlack = Colors.white;
 }
+

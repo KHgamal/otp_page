@@ -16,8 +16,8 @@ class Logo extends StatelessWidget {
       children: [
          Column(
            children: [
-             CustomText(text: S.of(context).title,color: Colour.indigo(context)  ,),
-             CustomText(text: S.of(context).sub_title,color: Colour.pink(context)  ,),
+             CustomText(text: S.of(context).title,color:Theme.of(context).colorScheme.primary ,),
+             CustomText(text: S.of(context).sub_title,color:Theme.of(context).colorScheme.secondary),
            ],
          ),
            Image.asset(
