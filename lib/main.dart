@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
               supportedLocales: S.delegate.supportedLocales,
               title: 'OTP Page',
               debugShowCheckedModeBanner: false,
-               theme: state.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
+               theme: state.isDarkTheme ? ThemeData.dark( useMaterial3: false,) 
+               : ThemeData.light( useMaterial3: false,),
                locale: Locale(state.locale),
               home: const OtpScreen(),
             );
