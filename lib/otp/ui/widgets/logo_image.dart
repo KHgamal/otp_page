@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/common/colors.dart';
 import 'package:otp_page/otp/ui/widgets/text.dart';
 
+import '../../../common/styles/app_colors.dart';
 import '../../../generated/l10n.dart';
 
 class Logo extends StatelessWidget {
@@ -11,13 +11,14 @@ class Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final customColors = Theme.of(context).extension<CustomColors>()!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
          Column(
            children: [
-             CustomText(text: S.of(context).title,color:Theme.of(context).colorScheme.primary ,),
-             CustomText(text: S.of(context).sub_title,color:Theme.of(context).colorScheme.secondary),
+             CustomText(text: S.of(context).title,color:customColors.primary!,),
+             CustomText(text: S.of(context).sub_title,color:customColors.secondary!),
            ],
          ),
            Image.asset(
