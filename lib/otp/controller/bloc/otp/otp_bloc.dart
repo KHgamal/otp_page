@@ -30,15 +30,14 @@ OTPBloc() : super(const OTPState.initial()) {
       } else {
         showSnackBar(event.context, 'Failed to send OTP: ${response.message}');
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
     if (e.response != null) {
-      print('Dio sending error! Response data: ${e.response?.data}');
+      showSnackBar(event.context,'Dio sending error! Response data: ${e.response?.data["message"]}');
     } else {
-      print('Dio sending error! Error message: ${e.message}');
+      showSnackBar(event.context,'Dio sending error! Error message: ${e.message}');
     }
-
   } catch (e) {
-    print('General sending error: $e');
+      showSnackBar(event.context,'General sending error: $e');
   }
   }
 
@@ -50,15 +49,15 @@ OTPBloc() : super(const OTPState.initial()) {
       } else {
         showSnackBar(event.context, 'Failed to verify OTP: ${response.message}');
       }
-    }on DioError catch (e) {
-    if (e.response != null) {
-      print('Dio Verify error! Response data: ${e.response?.data}');
-    } else {
-      print('Dio Verify error! Error message: ${e.message}');
+    }on DioException catch (e) {
+      if (e.response != null) {
+        showSnackBar(event.context,'Dio verify error! Response data: ${e.response?.data["message"]}');
+      } else {
+        showSnackBar(event.context,'Dio verify error! Error message: ${e.message}');
+      }
+    } catch (e) {
+      showSnackBar(event.context,'General verify error: $e');
     }
-  } catch (e) {
-    print('General Verify error: $e');
-  }
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {
