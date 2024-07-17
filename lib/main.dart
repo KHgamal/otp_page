@@ -9,12 +9,15 @@ import 'package:otp_page/otp/ui/views/otp_screen.dart';
 import 'common/styles/gallery_theme.dart';
 import 'otp/controller/bloc/otp/otp_bloc.dart';
 
-void main() {
+void main() {  
+
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  
+
+ const MyApp({super.key,});
 
   @override
   Widget build(BuildContext context) {

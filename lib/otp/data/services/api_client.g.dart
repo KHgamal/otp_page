@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'client_service.dart';
+part of 'api_client.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,12 +8,12 @@ part of 'client_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _ApiService implements ApiService {
-  _ApiService(
+class _ApiClient implements ApiClient {
+  _ApiClient(
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'https://dev.goldenhost.co/api/v3/auth/';
+    baseUrl ??= 'https://dev.goldenhost.co/api/v3/auth';
   }
 
   final Dio _dio;
@@ -21,11 +21,11 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse> sendOtp(
-    SendOtpResponse request,
+  Future<ApiResponse> sendOtp(
     String secretKey,
     String language,
     String accept,
+     request,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -38,14 +38,14 @@ class _ApiService implements ApiService {
     final _data = <String, dynamic>{};
     _data.addAll(request.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<HttpResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'send-otp',
+              '/send-otp',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -54,16 +54,16 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = HttpResponse.fromJson(_result.data!);
+    final _value = ApiResponse.fromJson(_result.data!);
     return _value;
   }
 
   @override
-  Future<HttpResponse> verifyOtp(
-    VerifyOtpResponse request,
+  Future<ApiResponse> verifyOtp(
     String secretKey,
     String language,
     String accept,
+     request,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -76,14 +76,14 @@ class _ApiService implements ApiService {
     final _data = <String, dynamic>{};
     _data.addAll(request.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<HttpResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'verify-otp',
+              '/verify-otp',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -92,7 +92,7 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = HttpResponse.fromJson(_result.data!);
+    final _value = ApiResponse.fromJson(_result.data!);
     return _value;
   }
 

@@ -18,7 +18,11 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$OTPEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String enteredCode, BuildContext context)
+    required TResult Function(
+            String countryCode, String phone, BuildContext context)
+        sendOTP,
+    required TResult Function(String countryCode, String phone,
+            String enteredCode, BuildContext context)
         verifyOTP,
     required TResult Function() startResendTimer,
     required TResult Function(int countdown) updateCountdown,
@@ -26,14 +30,22 @@ mixin _$OTPEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult? Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult? Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult? Function()? startResendTimer,
     TResult? Function(int countdown)? updateCountdown,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult Function()? startResendTimer,
     TResult Function(int countdown)? updateCountdown,
     required TResult orElse(),
@@ -41,6 +53,7 @@ mixin _$OTPEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
     required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(StartResendTimer value) startResendTimer,
     required TResult Function(UpdateCountdown value) updateCountdown,
@@ -48,6 +61,7 @@ mixin _$OTPEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOTP value)? sendOTP,
     TResult? Function(VerifyOTP value)? verifyOTP,
     TResult? Function(StartResendTimer value)? startResendTimer,
     TResult? Function(UpdateCountdown value)? updateCountdown,
@@ -55,6 +69,7 @@ mixin _$OTPEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
     TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(StartResendTimer value)? startResendTimer,
     TResult Function(UpdateCountdown value)? updateCountdown,
@@ -81,12 +96,191 @@ class _$OTPEventCopyWithImpl<$Res, $Val extends OTPEvent>
 }
 
 /// @nodoc
+abstract class _$$SendOTPImplCopyWith<$Res> {
+  factory _$$SendOTPImplCopyWith(
+          _$SendOTPImpl value, $Res Function(_$SendOTPImpl) then) =
+      __$$SendOTPImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String countryCode, String phone, BuildContext context});
+}
+
+/// @nodoc
+class __$$SendOTPImplCopyWithImpl<$Res>
+    extends _$OTPEventCopyWithImpl<$Res, _$SendOTPImpl>
+    implements _$$SendOTPImplCopyWith<$Res> {
+  __$$SendOTPImplCopyWithImpl(
+      _$SendOTPImpl _value, $Res Function(_$SendOTPImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countryCode = null,
+    Object? phone = null,
+    Object? context = null,
+  }) {
+    return _then(_$SendOTPImpl(
+      null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SendOTPImpl implements SendOTP {
+  const _$SendOTPImpl(this.countryCode, this.phone, this.context);
+
+  @override
+  final String countryCode;
+  @override
+  final String phone;
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'OTPEvent.sendOTP(countryCode: $countryCode, phone: $phone, context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SendOTPImpl &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, countryCode, phone, context);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SendOTPImplCopyWith<_$SendOTPImpl> get copyWith =>
+      __$$SendOTPImplCopyWithImpl<_$SendOTPImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            String countryCode, String phone, BuildContext context)
+        sendOTP,
+    required TResult Function(String countryCode, String phone,
+            String enteredCode, BuildContext context)
+        verifyOTP,
+    required TResult Function() startResendTimer,
+    required TResult Function(int countdown) updateCountdown,
+  }) {
+    return sendOTP(countryCode, phone, context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult? Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
+    TResult? Function()? startResendTimer,
+    TResult? Function(int countdown)? updateCountdown,
+  }) {
+    return sendOTP?.call(countryCode, phone, context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
+    TResult Function()? startResendTimer,
+    TResult Function(int countdown)? updateCountdown,
+    required TResult orElse(),
+  }) {
+    if (sendOTP != null) {
+      return sendOTP(countryCode, phone, context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
+    required TResult Function(VerifyOTP value) verifyOTP,
+    required TResult Function(StartResendTimer value) startResendTimer,
+    required TResult Function(UpdateCountdown value) updateCountdown,
+  }) {
+    return sendOTP(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOTP value)? sendOTP,
+    TResult? Function(VerifyOTP value)? verifyOTP,
+    TResult? Function(StartResendTimer value)? startResendTimer,
+    TResult? Function(UpdateCountdown value)? updateCountdown,
+  }) {
+    return sendOTP?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
+    TResult Function(VerifyOTP value)? verifyOTP,
+    TResult Function(StartResendTimer value)? startResendTimer,
+    TResult Function(UpdateCountdown value)? updateCountdown,
+    required TResult orElse(),
+  }) {
+    if (sendOTP != null) {
+      return sendOTP(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendOTP implements OTPEvent {
+  const factory SendOTP(final String countryCode, final String phone,
+      final BuildContext context) = _$SendOTPImpl;
+
+  String get countryCode;
+  String get phone;
+  BuildContext get context;
+  @JsonKey(ignore: true)
+  _$$SendOTPImplCopyWith<_$SendOTPImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$$VerifyOTPImplCopyWith<$Res> {
   factory _$$VerifyOTPImplCopyWith(
           _$VerifyOTPImpl value, $Res Function(_$VerifyOTPImpl) then) =
       __$$VerifyOTPImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String enteredCode, BuildContext context});
+  $Res call(
+      {String countryCode,
+      String phone,
+      String enteredCode,
+      BuildContext context});
 }
 
 /// @nodoc
@@ -100,15 +294,25 @@ class __$$VerifyOTPImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? countryCode = null,
+    Object? phone = null,
     Object? enteredCode = null,
-    Object? context = freezed,
+    Object? context = null,
   }) {
     return _then(_$VerifyOTPImpl(
+      null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
       null == enteredCode
           ? _value.enteredCode
           : enteredCode // ignore: cast_nullable_to_non_nullable
               as String,
-      freezed == context
+      null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
               as BuildContext,
@@ -119,8 +323,13 @@ class __$$VerifyOTPImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$VerifyOTPImpl implements VerifyOTP {
-  const _$VerifyOTPImpl(this.enteredCode, this.context);
+  const _$VerifyOTPImpl(
+      this.countryCode, this.phone, this.enteredCode, this.context);
 
+  @override
+  final String countryCode;
+  @override
+  final String phone;
   @override
   final String enteredCode;
   @override
@@ -128,7 +337,7 @@ class _$VerifyOTPImpl implements VerifyOTP {
 
   @override
   String toString() {
-    return 'OTPEvent.verifyOTP(enteredCode: $enteredCode, context: $context)';
+    return 'OTPEvent.verifyOTP(countryCode: $countryCode, phone: $phone, enteredCode: $enteredCode, context: $context)';
   }
 
   @override
@@ -136,14 +345,17 @@ class _$VerifyOTPImpl implements VerifyOTP {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VerifyOTPImpl &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.enteredCode, enteredCode) ||
                 other.enteredCode == enteredCode) &&
-            const DeepCollectionEquality().equals(other.context, context));
+            (identical(other.context, context) || other.context == context));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, enteredCode, const DeepCollectionEquality().hash(context));
+  int get hashCode =>
+      Object.hash(runtimeType, countryCode, phone, enteredCode, context);
 
   @JsonKey(ignore: true)
   @override
@@ -154,34 +366,46 @@ class _$VerifyOTPImpl implements VerifyOTP {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String enteredCode, BuildContext context)
+    required TResult Function(
+            String countryCode, String phone, BuildContext context)
+        sendOTP,
+    required TResult Function(String countryCode, String phone,
+            String enteredCode, BuildContext context)
         verifyOTP,
     required TResult Function() startResendTimer,
     required TResult Function(int countdown) updateCountdown,
   }) {
-    return verifyOTP(enteredCode, context);
+    return verifyOTP(countryCode, phone, enteredCode, context);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult? Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult? Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult? Function()? startResendTimer,
     TResult? Function(int countdown)? updateCountdown,
   }) {
-    return verifyOTP?.call(enteredCode, context);
+    return verifyOTP?.call(countryCode, phone, enteredCode, context);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult Function()? startResendTimer,
     TResult Function(int countdown)? updateCountdown,
     required TResult orElse(),
   }) {
     if (verifyOTP != null) {
-      return verifyOTP(enteredCode, context);
+      return verifyOTP(countryCode, phone, enteredCode, context);
     }
     return orElse();
   }
@@ -189,6 +413,7 @@ class _$VerifyOTPImpl implements VerifyOTP {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
     required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(StartResendTimer value) startResendTimer,
     required TResult Function(UpdateCountdown value) updateCountdown,
@@ -199,6 +424,7 @@ class _$VerifyOTPImpl implements VerifyOTP {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOTP value)? sendOTP,
     TResult? Function(VerifyOTP value)? verifyOTP,
     TResult? Function(StartResendTimer value)? startResendTimer,
     TResult? Function(UpdateCountdown value)? updateCountdown,
@@ -209,6 +435,7 @@ class _$VerifyOTPImpl implements VerifyOTP {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
     TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(StartResendTimer value)? startResendTimer,
     TResult Function(UpdateCountdown value)? updateCountdown,
@@ -222,9 +449,11 @@ class _$VerifyOTPImpl implements VerifyOTP {
 }
 
 abstract class VerifyOTP implements OTPEvent {
-  const factory VerifyOTP(
+  const factory VerifyOTP(final String countryCode, final String phone,
       final String enteredCode, final BuildContext context) = _$VerifyOTPImpl;
 
+  String get countryCode;
+  String get phone;
   String get enteredCode;
   BuildContext get context;
   @JsonKey(ignore: true)
@@ -270,7 +499,11 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String enteredCode, BuildContext context)
+    required TResult Function(
+            String countryCode, String phone, BuildContext context)
+        sendOTP,
+    required TResult Function(String countryCode, String phone,
+            String enteredCode, BuildContext context)
         verifyOTP,
     required TResult Function() startResendTimer,
     required TResult Function(int countdown) updateCountdown,
@@ -281,7 +514,11 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult? Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult? Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult? Function()? startResendTimer,
     TResult? Function(int countdown)? updateCountdown,
   }) {
@@ -291,7 +528,11 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult Function()? startResendTimer,
     TResult Function(int countdown)? updateCountdown,
     required TResult orElse(),
@@ -305,6 +546,7 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
     required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(StartResendTimer value) startResendTimer,
     required TResult Function(UpdateCountdown value) updateCountdown,
@@ -315,6 +557,7 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOTP value)? sendOTP,
     TResult? Function(VerifyOTP value)? verifyOTP,
     TResult? Function(StartResendTimer value)? startResendTimer,
     TResult? Function(UpdateCountdown value)? updateCountdown,
@@ -325,6 +568,7 @@ class _$StartResendTimerImpl implements StartResendTimer {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
     TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(StartResendTimer value)? startResendTimer,
     TResult Function(UpdateCountdown value)? updateCountdown,
@@ -407,7 +651,11 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String enteredCode, BuildContext context)
+    required TResult Function(
+            String countryCode, String phone, BuildContext context)
+        sendOTP,
+    required TResult Function(String countryCode, String phone,
+            String enteredCode, BuildContext context)
         verifyOTP,
     required TResult Function() startResendTimer,
     required TResult Function(int countdown) updateCountdown,
@@ -418,7 +666,11 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult? Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult? Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult? Function()? startResendTimer,
     TResult? Function(int countdown)? updateCountdown,
   }) {
@@ -428,7 +680,11 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String enteredCode, BuildContext context)? verifyOTP,
+    TResult Function(String countryCode, String phone, BuildContext context)?
+        sendOTP,
+    TResult Function(String countryCode, String phone, String enteredCode,
+            BuildContext context)?
+        verifyOTP,
     TResult Function()? startResendTimer,
     TResult Function(int countdown)? updateCountdown,
     required TResult orElse(),
@@ -442,6 +698,7 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(SendOTP value) sendOTP,
     required TResult Function(VerifyOTP value) verifyOTP,
     required TResult Function(StartResendTimer value) startResendTimer,
     required TResult Function(UpdateCountdown value) updateCountdown,
@@ -452,6 +709,7 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SendOTP value)? sendOTP,
     TResult? Function(VerifyOTP value)? verifyOTP,
     TResult? Function(StartResendTimer value)? startResendTimer,
     TResult? Function(UpdateCountdown value)? updateCountdown,
@@ -462,6 +720,7 @@ class _$UpdateCountdownImpl implements UpdateCountdown {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(SendOTP value)? sendOTP,
     TResult Function(VerifyOTP value)? verifyOTP,
     TResult Function(StartResendTimer value)? startResendTimer,
     TResult Function(UpdateCountdown value)? updateCountdown,

@@ -1,29 +1,67 @@
 import 'dart:async';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../data/services/api_service.dart';
 import '../../../ui/widgets/snack_bar.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
-import 'package:otp_page/generated/l10n.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
+  final ApiService apiService = ApiService();
   final TextEditingController otpController = TextEditingController();
    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
 
-  OTPBloc() : super(const OTPState.initial()) {
+OTPBloc() : super(const OTPState.initial()) {
+    on<SendOTP>(_onSendOTP);
     on<VerifyOTP>(_onVerifyOTP);
     on<StartResendTimer>(_onStartResendTimer);
     on<UpdateCountdown>(_onUpdateCountdown);
   }
 
-  void _onVerifyOTP(VerifyOTP event, Emitter<OTPState> emit) {
-    if (event.enteredCode == '1234') {
-      emit(const OTPState.verified());
+ Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit) async {
+    try {
+      final response = await apiService.sendOtp(event.countryCode, event.phone);
+      if (response.success ) {
+        showSnackBar(event.context, 'OTP sent successfully');
+      } else {
+        showSnackBar(event.context, 'Failed to send OTP: ${response.message}');
+      }
+    } on DioError catch (e) {
+    if (e.response != null) {
+      print('Dio error! Response data: ${e.response?.data}');
     } else {
-      showSnackBar(event.context, S.of(event.context).incorrectOtp);
+      print('Dio error! Error message: ${e.message}');
     }
+    rethrow;
+  } catch (e) {
+    print('General error: $e');
+    rethrow;
+  }
+  }
+
+  Future<void> _onVerifyOTP(VerifyOTP event, Emitter<OTPState> emit) async {
+    try {
+      final response = await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
+      if (response.success ) {
+        emit(const OTPState.verified());
+      } else {
+        showSnackBar(event.context, 'Failed to verify OTP: ${response.message}');
+      }
+    }on DioError catch (e) {
+    if (e.response != null) {
+      print('Dio error! Response data: ${e.response?.data}');
+    } else {
+      print('Dio error! Error message: ${e.message}');
+    }
+    rethrow;
+  } catch (e) {
+    print('General error: $e');
+    rethrow;
+  }
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {

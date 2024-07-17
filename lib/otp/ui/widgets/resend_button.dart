@@ -10,9 +10,11 @@ class ResendButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final otpBloc=context.read<OTPBloc>();
     return TextButton(
       onPressed: () {
-       context.read<OTPBloc>().add(const OTPEvent.startResendTimer());
+         otpBloc.add(SendOTP('+966', '511111111', context));
+       otpBloc.add(const OTPEvent.startResendTimer());
       },
       child: Text(S.of(context).resend,),
     );
