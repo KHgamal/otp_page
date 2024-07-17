@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
       fixedSize: const Size(400, 45)
               ),
         onPressed: () {
-          otpBloc.add(SendOTP('+966', '511111111', context));
+
           if (otpBloc.formKey.currentState!.validate()) {
             otpBloc.add(OTPEvent.verifyOTP("+966","511111111","1111",context));
          }

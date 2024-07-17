@@ -7,6 +7,7 @@ import '../../../common/styles/app_colors.dart';
 import '../../../generated/l10n.dart';
 
 import '../../controller/bloc/otp/otp_bloc.dart';
+import '../../controller/bloc/otp/otp_event.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
 import '../widgets/resend_bloc.dart';
@@ -17,6 +18,7 @@ class OtpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
    final otpBloc = context.read<OTPBloc>();
+   otpBloc.add(SendOTP('+966', '511111111', context));
     final customColors = Theme.of(context).extension<CustomColors>()!;
     return SafeArea(
       child: Scaffold(
