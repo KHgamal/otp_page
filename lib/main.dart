@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -10,7 +11,6 @@ import 'common/styles/gallery_theme.dart';
 import 'otp/controller/bloc/otp/otp_bloc.dart';
 
 void main() {  
-
   runApp(const MyApp());
 }
 

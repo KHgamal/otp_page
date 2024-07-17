@@ -25,7 +25,7 @@ class _ApiClient implements ApiClient {
     String secretKey,
     String language,
     String accept,
-     request,
+    dynamic request,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -35,8 +35,7 @@ class _ApiClient implements ApiClient {
       r'Accept': accept,
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    _data.addAll(request.toJson());
+    final _data = request;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',
@@ -63,7 +62,7 @@ class _ApiClient implements ApiClient {
     String secretKey,
     String language,
     String accept,
-     request,
+    dynamic request,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -73,8 +72,7 @@ class _ApiClient implements ApiClient {
       r'Accept': accept,
     };
     _headers.removeWhere((k, v) => v == null);
-    final _data = <String, dynamic>{};
-    _data.addAll(request.toJson());
+    final _data = request;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',

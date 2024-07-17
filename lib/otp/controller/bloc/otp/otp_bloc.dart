@@ -32,13 +32,13 @@ OTPBloc() : super(const OTPState.initial()) {
       }
     } on DioError catch (e) {
     if (e.response != null) {
-      print('Dio error! Response data: ${e.response?.data}');
+      print('Dio sending error! Response data: ${e.response?.data}');
     } else {
-      print('Dio error! Error message: ${e.message}');
+      print('Dio sending error! Error message: ${e.message}');
     }
     rethrow;
   } catch (e) {
-    print('General error: $e');
+    print('General sending error: $e');
     rethrow;
   }
   }
@@ -53,13 +53,13 @@ OTPBloc() : super(const OTPState.initial()) {
       }
     }on DioError catch (e) {
     if (e.response != null) {
-      print('Dio error! Response data: ${e.response?.data}');
+      print('Dio Verify error! Response data: ${e.response?.data}');
     } else {
-      print('Dio error! Error message: ${e.message}');
+      print('Dio Verify error! Error message: ${e.message}');
     }
     rethrow;
   } catch (e) {
-    print('General error: $e');
+    print('General Verify error: $e');
     rethrow;
   }
   }
