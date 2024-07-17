@@ -36,10 +36,9 @@ OTPBloc() : super(const OTPState.initial()) {
     } else {
       print('Dio sending error! Error message: ${e.message}');
     }
-    rethrow;
+
   } catch (e) {
     print('General sending error: $e');
-    rethrow;
   }
   }
 
@@ -57,10 +56,8 @@ OTPBloc() : super(const OTPState.initial()) {
     } else {
       print('Dio Verify error! Error message: ${e.message}');
     }
-    rethrow;
   } catch (e) {
     print('General Verify error: $e');
-    rethrow;
   }
   }
 

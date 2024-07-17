@@ -44,7 +44,7 @@ class _ApiClient implements ApiClient {
     )
             .compose(
               _dio.options,
-              '/send-otp',
+              '/resend-otp',
               queryParameters: queryParameters,
               data: _data,
             )

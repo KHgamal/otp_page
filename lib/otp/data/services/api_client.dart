@@ -7,7 +7,7 @@ part 'api_client.g.dart';
 abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
-  @POST("/send-otp")
+  @POST("/resend-otp")
   Future<ApiResponse> sendOtp(
     @Header("X-SECRET-KEY") String secretKey,
     @Header("X-Language") String language,
