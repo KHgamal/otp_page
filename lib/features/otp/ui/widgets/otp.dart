@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../../generated/l10n.dart';
+import '../../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
 class Otp extends StatelessWidget {

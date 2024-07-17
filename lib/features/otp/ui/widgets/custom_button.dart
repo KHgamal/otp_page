@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:otp_page/otp/controller/bloc/otp/otp_event.dart';
-import 'package:otp_page/otp/ui/widgets/snack_bar.dart';
+import 'package:otp_page/features/otp/controller/bloc/otp/otp_event.dart';
+import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
-import '../../../generated/l10n.dart';
+import '../../../../generated/l10n.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 
 class CustomButton extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../generated/l10n.dart';
+import '../../../../generated/l10n.dart';
 import '../../controller/bloc/preference/preference_bloc.dart';
 import '../../controller/bloc/preference/preference_event.dart';
 

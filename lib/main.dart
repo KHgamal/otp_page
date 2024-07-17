@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:otp_page/generated/l10n.dart';
-import 'package:otp_page/otp/controller/bloc/preference/preference_bloc.dart';
-import 'package:otp_page/otp/controller/bloc/preference/preference_state.dart';
-import 'package:otp_page/otp/ui/views/otp_screen.dart';
+import 'package:otp_page/features/otp/controller/bloc/preference/preference_bloc.dart';
+import 'package:otp_page/features/otp/controller/bloc/preference/preference_state.dart';
+import 'package:otp_page/features/otp/ui/views/otp_screen.dart';
 
 import 'common/styles/gallery_theme.dart';
-import 'otp/controller/bloc/otp/otp_bloc.dart';
+import 'features/otp/controller/bloc/otp/otp_bloc.dart';
 
 void main() {  
   runApp(const MyApp());

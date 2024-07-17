@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/otp/controller/bloc/preference/preference_event.dart';
+import 'package:otp_page/features/otp/controller/bloc/preference/preference_event.dart';
 import 'package:provider/provider.dart';
 
 import '../../controller/bloc/preference/preference_bloc.dart';

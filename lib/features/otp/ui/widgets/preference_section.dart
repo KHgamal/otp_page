@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/otp/ui/widgets/language_drop_down.dart';
-import 'package:otp_page/otp/ui/widgets/theme_button.dart';
+import 'package:otp_page/features/otp/ui/widgets/language_drop_down.dart';
+import 'package:otp_page/features/otp/ui/widgets/theme_button.dart';
 
 class PreferenceSection extends StatelessWidget {
   const PreferenceSection({
