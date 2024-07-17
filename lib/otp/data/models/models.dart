@@ -3,28 +3,6 @@ import 'package:json_annotation/json_annotation.dart';
 part 'models.g.dart';
 
 @JsonSerializable()
-class SendOtpRequest {
-  final String countryCode;
-  final String phone;
-
-  SendOtpRequest({required this.countryCode, required this.phone});
-
-  factory SendOtpRequest.fromJson(Map<String, dynamic> json) => _$SendOtpRequestFromJson(json);
-}
-
-@JsonSerializable()
-class VerifyOtpRequest {
-  final String countryCode;
-  final String phone;
-  final String otp;
-
-  VerifyOtpRequest({required this.countryCode, required this.phone, required this.otp});
-
-  factory VerifyOtpRequest.fromJson(Map<String, dynamic> json) => _$VerifyOtpRequestFromJson(json);
-
-}
-
-@JsonSerializable()
 class ApiResponse {
   final String message;
   final bool success;

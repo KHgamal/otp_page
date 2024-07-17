@@ -21,8 +21,8 @@ class ApiService {
       'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
       'ar',
       'application/json',
-      // {"country_code":"+966","phone":"511111111"}
-     SendOtpRequest(countryCode: "+966", phone:"511111111" ),
+       {"country_code":countryCode,"phone":phone}
+    
     );
   }
 
@@ -31,8 +31,8 @@ class ApiService {
       'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
       'ar',
       'application/json',
-     // {"country_code":"+966","phone":"511111111","otp":"1111"},
-      VerifyOtpRequest(countryCode: countryCode, phone: phone, otp: otp),
+      {"country_code":countryCode,"phone":phone,"otp":otp},
+      
     );
   }
 }
