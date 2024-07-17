@@ -21,20 +21,10 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<ApiResponse> sendOtp(
-    String secretKey,
-    String language,
-    String accept,
-    dynamic request,
-  ) async {
+  Future<ApiResponse> sendOtp(dynamic request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'X-SECRET-KEY': secretKey,
-      r'X-Language': language,
-      r'Accept': accept,
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = request;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
@@ -58,20 +48,10 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<ApiResponse> verifyOtp(
-    String secretKey,
-    String language,
-    String accept,
-    dynamic request,
-  ) async {
+  Future<ApiResponse> verifyOtp(dynamic request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{
-      r'X-SECRET-KEY': secretKey,
-      r'X-Language': language,
-      r'Accept': accept,
-    };
-    _headers.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
     final _data = request;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(

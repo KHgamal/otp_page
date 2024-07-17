@@ -9,17 +9,11 @@ abstract class ApiClient {
 
   @POST("/resend-otp")
   Future<ApiResponse> sendOtp(
-    @Header("X-SECRET-KEY") String secretKey,
-    @Header("X-Language") String language,
-    @Header("Accept") String accept,
     @Body()  request,
   );
 
   @POST("/verify-otp")
   Future<ApiResponse> verifyOtp(
-    @Header("X-SECRET-KEY") String secretKey,
-    @Header("X-Language") String language,
-    @Header("Accept") String accept,
     @Body()  request,
   );
 }

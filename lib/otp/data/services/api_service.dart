@@ -4,7 +4,6 @@ import 'api_client.dart';
 
 class ApiService {
   final ApiClient apiClient;
-  
 
   ApiService()
       : apiClient = ApiClient(Dio(BaseOptions(
@@ -18,9 +17,6 @@ class ApiService {
 
   Future<ApiResponse> sendOtp(String countryCode, String phone) async {
     return apiClient.sendOtp(
-      'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
-      'ar',
-      'application/json',
        {"country_code":countryCode,"phone":phone}
     
     );
@@ -28,11 +24,7 @@ class ApiService {
 
   Future<ApiResponse> verifyOtp(String countryCode, String phone, String otp) async {
     return apiClient.verifyOtp(
-      'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
-      'ar',
-      'application/json',
       {"country_code":countryCode,"phone":phone,"otp":otp},
-      
     );
   }
 }
