@@ -4,14 +4,14 @@ import 'data.dart';
 part 'response.g.dart';
 
 @JsonSerializable()
-class ApiResponse {
+class VerifyResponse {
   final Data data;
   final Map<String, dynamic> errors;
   final String message;
   final bool success;
 
-  ApiResponse({required this.data, required this.errors, required this.message, required this.success});
+  VerifyResponse({required this.data, required this.errors, required this.message, required this.success});
 
-  factory ApiResponse.fromJson(Map<String, dynamic> json) => _$ApiResponseFromJson(json);
+  factory VerifyResponse.fromJson(Map<String, dynamic> json) => _$VerifyResponseFromJson(json);
   
 }

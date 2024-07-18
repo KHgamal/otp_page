@@ -4,7 +4,9 @@ import 'package:otp_page/features/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
 import '../../../../generated/l10n.dart';
+import '../../../profile/UI/views/profile_view.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
+import '../../controller/bloc/otp/otp_state.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -13,23 +15,33 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final otpBloc=context.read<OTPBloc>();
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-     backgroundColor: Theme.of(context).colorScheme.primary ,
-      fixedSize: const Size(400, 45)
-              ),
+    final otpBloc = context.read<OTPBloc>();
+    return  BlocListener<OTPBloc, OTPState>(
+      listener: (context, state) {
+        state.whenOrNull(verified: ()=> Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Profileview()),
+          ));
+      },
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            fixedSize: const Size(400, 45)),
         onPressed: () {
-
           if (otpBloc.formKey.currentState!.validate()) {
-            otpBloc.add(OTPEvent.verifyOTP("+966","511111111","1111",context));
-         }
-         else {
-         showSnackBar(context,S.of(context).Enter_valid_value);
-             }
-          },
-          child:Text(S.of(context).verify, style: TextStyle(color:Theme.of(context).colorScheme.onPrimary ),),
-        );
+             otpBloc.add(SendOTP('+966', '511111111', context));
+            otpBloc
+                .add(OTPEvent.verifyOTP("+966", "511111111", "1111", context));
+          
+          } else {
+            showSnackBar(context, S.of(context).Enter_valid_value);
+          }
+        },
+        child: Text(
+          S.of(context).verify,
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        ),
+      ),
+    );
   }
 }
-             

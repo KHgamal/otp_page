@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:otp_page/core/utils/helpers/di/app_module.dart';
 import 'package:otp_page/generated/l10n.dart';
 import 'package:otp_page/features/otp/controller/bloc/preference/preference_bloc.dart';
 import 'package:otp_page/features/otp/controller/bloc/preference/preference_state.dart';
@@ -11,6 +11,7 @@ import 'core/common/styles/gallery_theme.dart';
 import 'features/otp/controller/bloc/otp/otp_bloc.dart';
 
 void main() {  
+  setupLocator();
   runApp(const MyApp());
 }
 

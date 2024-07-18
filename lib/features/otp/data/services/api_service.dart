@@ -1,4 +1,5 @@
-import 'package:dio/dio.dart';
+import '../../../../core/utils/helpers/di/app_module.dart';
+import '../../../profile/data/models/response.dart';
 import '../models/models.dart';
 import 'api_client.dart';
 
@@ -6,14 +7,7 @@ class ApiService {
   final ApiClient apiClient;
 
   ApiService()
-      : apiClient = ApiClient(Dio(BaseOptions(
-          headers: {
-            'X-SECRET-KEY': 'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
-            'X-Language': 'ar',
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-        )));  
+      : apiClient = ApiClient(dioInstance);  
 
   Future<ApiResponse> sendOtp(String countryCode, String phone) async {
     return apiClient.sendOtp(
@@ -22,7 +16,7 @@ class ApiService {
     );
   }
 
-  Future<ApiResponse> verifyOtp(String countryCode, String phone, String otp) async {
+  Future<VerifyResponse> verifyOtp(String countryCode, String phone, String otp) async {
     return apiClient.verifyOtp(
       {"country_code":countryCode,"phone":phone,"otp":otp},
     );

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+import '../../../profile/data/models/response.dart';
 import '../models/models.dart';
 part 'api_client.g.dart';
 
@@ -13,7 +14,7 @@ abstract class ApiClient {
   );
 
   @POST("/verify-otp")
-  Future<ApiResponse> verifyOtp(
+  Future<VerifyResponse> verifyOtp(
     @Body()  request,
   );
 }

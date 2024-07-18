@@ -6,14 +6,15 @@ part of 'response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ApiResponse _$ApiResponseFromJson(Map<String, dynamic> json) => ApiResponse(
+VerifyResponse _$VerifyResponseFromJson(Map<String, dynamic> json) =>
+    VerifyResponse(
       data: Data.fromJson(json['data'] as Map<String, dynamic>),
       errors: json['errors'] as Map<String, dynamic>,
       message: json['message'] as String,
       success: json['success'] as bool,
     );
 
-Map<String, dynamic> _$ApiResponseToJson(ApiResponse instance) =>
+Map<String, dynamic> _$VerifyResponseToJson(VerifyResponse instance) =>
     <String, dynamic>{
       'data': instance.data,
       'errors': instance.errors,

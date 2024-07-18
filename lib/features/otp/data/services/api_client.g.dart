@@ -48,13 +48,13 @@ class _ApiClient implements ApiClient {
   }
 
   @override
-  Future<ApiResponse> verifyOtp(dynamic request) async {
+  Future<VerifyResponse> verifyOtp(dynamic request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = request;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<VerifyResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -70,7 +70,7 @@ class _ApiClient implements ApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = ApiResponse.fromJson(_result.data!);
+    final _value = VerifyResponse.fromJson(_result.data!);
     return _value;
   }
 

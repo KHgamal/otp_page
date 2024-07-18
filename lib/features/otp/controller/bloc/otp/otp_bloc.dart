@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
+import 'package:otp_page/features/profile/data/models/profile.dart';
+
 
 import '../../../data/services/api_service.dart';
 import '../../../ui/widgets/snack_bar.dart';
@@ -10,6 +12,7 @@ import 'otp_event.dart';
 import 'otp_state.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
+ late Profile dataList ;
   final ApiService apiService = ApiService();
   final TextEditingController otpController = TextEditingController();
    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -43,7 +46,9 @@ OTPBloc() : super(const OTPState.initial()) {
     try {
       final response = await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
       if (response.success ) {
+        dataList=response.data.profile;
         emit(const OTPState.verified());
+        
       } else {
         showSnackBar(event.context, 'Failed to verify OTP: ${response.message}');
       }
