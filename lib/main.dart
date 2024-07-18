@@ -7,7 +7,7 @@ import 'package:otp_page/features/otp/controller/bloc/preference/preference_bloc
 import 'package:otp_page/features/otp/controller/bloc/preference/preference_state.dart';
 import 'package:otp_page/features/otp/ui/views/otp_screen.dart';
 
-import 'common/styles/gallery_theme.dart';
+import 'core/common/styles/gallery_theme.dart';
 import 'features/otp/controller/bloc/otp/otp_bloc.dart';
 
 void main() {  

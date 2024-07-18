@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp_page/features/otp/ui/widgets/text.dart';
 
-import '../../../../common/styles/app_colors.dart';
+import '../../../../core/common/styles/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
 class Logo extends StatelessWidget {

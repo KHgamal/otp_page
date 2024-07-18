@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/features/otp/ui/widgets/logo_image.dart';
 import 'package:otp_page/features/otp/ui/widgets/otp.dart';
 
-import '../../../../common/styles/app_colors.dart';
+import '../../../../core/common/styles/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
 import '../../controller/bloc/otp/otp_bloc.dart';

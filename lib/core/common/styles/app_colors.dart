@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/common/styles/colors.dart';
+import 'package:otp_page/core/common/styles/colors.dart';
 
 class CustomColors extends ThemeExtension<CustomColors> {
   final Color? primary; 
