@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 class DioExceptionModel implements Exception {
   late String errorMessage;
 
-  DioExceptionModel.fromDioError(DioException dioError) {
+  DioExceptionModel.fromDioError(DioException dioError,message) {
     switch (dioError.type) {
       case DioExceptionType.cancel:
         errorMessage = 'Request to the server was cancelled.';
@@ -18,7 +18,7 @@ class DioExceptionModel implements Exception {
         errorMessage = 'Request send timeout.';
         break;
       case DioExceptionType.badResponse:
-        errorMessage = _handleStatusCode(dioError.response?.statusCode);
+        errorMessage = _handleStatusCode(dioError.response?.statusCode,message);
         break;
       case DioExceptionType.unknown:
         if (dioError.message!.contains('SocketException')) {
@@ -33,10 +33,10 @@ class DioExceptionModel implements Exception {
     }
   }
 
-  String _handleStatusCode(int? statusCode) {
+  String _handleStatusCode(int? statusCode,message) {
     switch (statusCode) {
       case 400:
-        return 'Bad request.';
+        return message;
       case 401:
         return 'Authentication failed.';
       case 403:

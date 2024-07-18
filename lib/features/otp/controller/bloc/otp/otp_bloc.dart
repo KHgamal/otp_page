@@ -25,10 +25,15 @@ OTPBloc() : super(const OTPState.initial()) {
 
  Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit) async {
     try {
-     await apiService.sendOtp(event.countryCode, event.phone);
+      final response = await apiService.sendOtp(event.countryCode, event.phone);
+      if (response.success ) {
+        showSnackBar(event.context, 'OTP sent successfully');
+      } else {
+        showSnackBar(event.context, 'Failed to send OTP: ${response.message}');
+      }
     } on DioException catch (err) {
-         final errorMessage = DioExceptionModel.fromDioError(err).toString();
-        showSnackBar(event.context,errorMessage);
+         final errorMessage = DioExceptionModel.fromDioError(err,err.response!.data['message']).toString();
+         showSnackBar(event.context,errorMessage );
   } catch (e) {
       showSnackBar(event.context,'General sending error: $e');
   }
@@ -36,13 +41,18 @@ OTPBloc() : super(const OTPState.initial()) {
 
   Future<void> _onVerifyOTP(VerifyOTP event, Emitter<OTPState> emit) async {
     try {
-     await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
-  } on DioException catch (err) {
-         final errorMessage = DioExceptionModel.fromDioError(err).toString();
-        showSnackBar(event.context,errorMessage);
+      final response = await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
+      if (response.success ) {
+        emit(const OTPState.verified());
+      } else {
+        showSnackBar(event.context, 'Failed to verify OTP: ${response.message}');
+      }
+    } on DioException catch (err) {
+         final errorMessage = DioExceptionModel.fromDioError(err,err.response!.data['message']).toString();
+         showSnackBar(event.context,errorMessage );
   } catch (e) {
-      showSnackBar(event.context,'General Verify error: $e');
-  }
+      showSnackBar(event.context,'General verify error: $e');
+    }
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {
