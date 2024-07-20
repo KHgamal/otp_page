@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otp_page/features/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
@@ -18,10 +19,7 @@ class CustomButton extends StatelessWidget {
     final otpBloc = context.read<OTPBloc>();
     return  BlocListener<OTPBloc, OTPState>(
       listener: (context, state) {
-        state.whenOrNull(verified: ()=> Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const Profileview()),
-          ));
+        state.whenOrNull(verified: ()=> context.go('/profile')); 
       },
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
