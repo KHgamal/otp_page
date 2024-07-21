@@ -21,6 +21,9 @@ mixin _$OTPState {
     required TResult Function() initial,
     required TResult Function() verified,
     required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +31,9 @@ mixin _$OTPState {
     TResult? Function()? initial,
     TResult? Function()? verified,
     TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +41,9 @@ mixin _$OTPState {
     TResult Function()? initial,
     TResult Function()? verified,
     TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +52,9 @@ mixin _$OTPState {
     required TResult Function(InitialState value) initial,
     required TResult Function(VerifiedState value) verified,
     required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +62,9 @@ mixin _$OTPState {
     TResult? Function(InitialState value)? initial,
     TResult? Function(VerifiedState value)? verified,
     TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +72,9 @@ mixin _$OTPState {
     TResult Function(InitialState value)? initial,
     TResult Function(VerifiedState value)? verified,
     TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +138,9 @@ class _$InitialStateImpl implements InitialState {
     required TResult Function() initial,
     required TResult Function() verified,
     required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -130,6 +151,9 @@ class _$InitialStateImpl implements InitialState {
     TResult? Function()? initial,
     TResult? Function()? verified,
     TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -140,6 +164,9 @@ class _$InitialStateImpl implements InitialState {
     TResult Function()? initial,
     TResult Function()? verified,
     TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -154,6 +181,9 @@ class _$InitialStateImpl implements InitialState {
     required TResult Function(InitialState value) initial,
     required TResult Function(VerifiedState value) verified,
     required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
   }) {
     return initial(this);
   }
@@ -164,6 +194,9 @@ class _$InitialStateImpl implements InitialState {
     TResult? Function(InitialState value)? initial,
     TResult? Function(VerifiedState value)? verified,
     TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
   }) {
     return initial?.call(this);
   }
@@ -174,6 +207,9 @@ class _$InitialStateImpl implements InitialState {
     TResult Function(InitialState value)? initial,
     TResult Function(VerifiedState value)? verified,
     TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -228,6 +264,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     required TResult Function() initial,
     required TResult Function() verified,
     required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
   }) {
     return verified();
   }
@@ -238,6 +277,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     TResult? Function()? initial,
     TResult? Function()? verified,
     TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
   }) {
     return verified?.call();
   }
@@ -248,6 +290,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     TResult Function()? initial,
     TResult Function()? verified,
     TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (verified != null) {
@@ -262,6 +307,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     required TResult Function(InitialState value) initial,
     required TResult Function(VerifiedState value) verified,
     required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
   }) {
     return verified(this);
   }
@@ -272,6 +320,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     TResult? Function(InitialState value)? initial,
     TResult? Function(VerifiedState value)? verified,
     TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
   }) {
     return verified?.call(this);
   }
@@ -282,6 +333,9 @@ class _$VerifiedStateImpl implements VerifiedState {
     TResult Function(InitialState value)? initial,
     TResult Function(VerifiedState value)? verified,
     TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
     required TResult orElse(),
   }) {
     if (verified != null) {
@@ -363,6 +417,9 @@ class _$ResendStateImpl implements ResendState {
     required TResult Function() initial,
     required TResult Function() verified,
     required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
   }) {
     return resend(countdown);
   }
@@ -373,6 +430,9 @@ class _$ResendStateImpl implements ResendState {
     TResult? Function()? initial,
     TResult? Function()? verified,
     TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
   }) {
     return resend?.call(countdown);
   }
@@ -383,6 +443,9 @@ class _$ResendStateImpl implements ResendState {
     TResult Function()? initial,
     TResult Function()? verified,
     TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (resend != null) {
@@ -397,6 +460,9 @@ class _$ResendStateImpl implements ResendState {
     required TResult Function(InitialState value) initial,
     required TResult Function(VerifiedState value) verified,
     required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
   }) {
     return resend(this);
   }
@@ -407,6 +473,9 @@ class _$ResendStateImpl implements ResendState {
     TResult? Function(InitialState value)? initial,
     TResult? Function(VerifiedState value)? verified,
     TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
   }) {
     return resend?.call(this);
   }
@@ -417,6 +486,9 @@ class _$ResendStateImpl implements ResendState {
     TResult Function(InitialState value)? initial,
     TResult Function(VerifiedState value)? verified,
     TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
     required TResult orElse(),
   }) {
     if (resend != null) {
@@ -432,5 +504,445 @@ abstract class ResendState implements OTPState {
   int get countdown;
   @JsonKey(ignore: true)
   _$$ResendStateImplCopyWith<_$ResendStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$successStateImplCopyWith<$Res> {
+  factory _$$successStateImplCopyWith(
+          _$successStateImpl value, $Res Function(_$successStateImpl) then) =
+      __$$successStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$successStateImplCopyWithImpl<$Res>
+    extends _$OTPStateCopyWithImpl<$Res, _$successStateImpl>
+    implements _$$successStateImplCopyWith<$Res> {
+  __$$successStateImplCopyWithImpl(
+      _$successStateImpl _value, $Res Function(_$successStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$successStateImpl implements successState {
+  const _$successStateImpl();
+
+  @override
+  String toString() {
+    return 'OTPState.success()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$successStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() verified,
+    required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
+  }) {
+    return success();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? verified,
+    TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
+  }) {
+    return success?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? verified,
+    TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initial,
+    required TResult Function(VerifiedState value) verified,
+    required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(VerifiedState value)? verified,
+    TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initial,
+    TResult Function(VerifiedState value)? verified,
+    TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class successState implements OTPState {
+  const factory successState() = _$successStateImpl;
+}
+
+/// @nodoc
+abstract class _$$faliureStateImplCopyWith<$Res> {
+  factory _$$faliureStateImplCopyWith(
+          _$faliureStateImpl value, $Res Function(_$faliureStateImpl) then) =
+      __$$faliureStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$faliureStateImplCopyWithImpl<$Res>
+    extends _$OTPStateCopyWithImpl<$Res, _$faliureStateImpl>
+    implements _$$faliureStateImplCopyWith<$Res> {
+  __$$faliureStateImplCopyWithImpl(
+      _$faliureStateImpl _value, $Res Function(_$faliureStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$faliureStateImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$faliureStateImpl implements faliureState {
+  const _$faliureStateImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'OTPState.faliure(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$faliureStateImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$faliureStateImplCopyWith<_$faliureStateImpl> get copyWith =>
+      __$$faliureStateImplCopyWithImpl<_$faliureStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() verified,
+    required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
+  }) {
+    return faliure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? verified,
+    TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
+  }) {
+    return faliure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? verified,
+    TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (faliure != null) {
+      return faliure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initial,
+    required TResult Function(VerifiedState value) verified,
+    required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
+  }) {
+    return faliure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(VerifiedState value)? verified,
+    TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
+  }) {
+    return faliure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initial,
+    TResult Function(VerifiedState value)? verified,
+    TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (faliure != null) {
+      return faliure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class faliureState implements OTPState {
+  const factory faliureState(final String message) = _$faliureStateImpl;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$faliureStateImplCopyWith<_$faliureStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$errorStateImplCopyWith<$Res> {
+  factory _$$errorStateImplCopyWith(
+          _$errorStateImpl value, $Res Function(_$errorStateImpl) then) =
+      __$$errorStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$errorStateImplCopyWithImpl<$Res>
+    extends _$OTPStateCopyWithImpl<$Res, _$errorStateImpl>
+    implements _$$errorStateImplCopyWith<$Res> {
+  __$$errorStateImplCopyWithImpl(
+      _$errorStateImpl _value, $Res Function(_$errorStateImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$errorStateImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$errorStateImpl implements errorState {
+  const _$errorStateImpl(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'OTPState.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$errorStateImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$errorStateImplCopyWith<_$errorStateImpl> get copyWith =>
+      __$$errorStateImplCopyWithImpl<_$errorStateImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() verified,
+    required TResult Function(int countdown) resend,
+    required TResult Function() success,
+    required TResult Function(String message) faliure,
+    required TResult Function(String error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? verified,
+    TResult? Function(int countdown)? resend,
+    TResult? Function()? success,
+    TResult? Function(String message)? faliure,
+    TResult? Function(String error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? verified,
+    TResult Function(int countdown)? resend,
+    TResult Function()? success,
+    TResult Function(String message)? faliure,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitialState value) initial,
+    required TResult Function(VerifiedState value) verified,
+    required TResult Function(ResendState value) resend,
+    required TResult Function(successState value) success,
+    required TResult Function(faliureState value) faliure,
+    required TResult Function(errorState value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InitialState value)? initial,
+    TResult? Function(VerifiedState value)? verified,
+    TResult? Function(ResendState value)? resend,
+    TResult? Function(successState value)? success,
+    TResult? Function(faliureState value)? faliure,
+    TResult? Function(errorState value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitialState value)? initial,
+    TResult Function(VerifiedState value)? verified,
+    TResult Function(ResendState value)? resend,
+    TResult Function(successState value)? success,
+    TResult Function(faliureState value)? faliure,
+    TResult Function(errorState value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class errorState implements OTPState {
+  const factory errorState(final String error) = _$errorStateImpl;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$errorStateImplCopyWith<_$errorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

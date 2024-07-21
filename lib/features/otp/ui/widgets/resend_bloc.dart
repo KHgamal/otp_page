@@ -19,6 +19,9 @@ class ResendSection extends StatelessWidget {
         state.whenOrNull(
           verified: () => showSnackBar(
               context, S.of(context).OTPVerifiedSuccessfully),
+          success:()=>  showSnackBar(context, S.of(context).OTP_sent_successfully), 
+          faliure:(message)=>  showSnackBar(context,message),   
+          error: (err)  => showSnackBar(context,err),   
         );
       },
       builder: (context, state) {

@@ -5,10 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
-
-import '../../../../../generated/l10n.dart';
 import '../../../data/services/api_service.dart';
-import '../../../ui/widgets/snack_bar.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
 
@@ -27,19 +24,19 @@ OTPBloc() : super(const OTPState.initial()) {
     on<UpdateCountdown>(_onUpdateCountdown);
   }
 
- Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit) async {
+ Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit ) async {
     try {
       final response = await apiService.sendOtp(event.countryCode, event.phone);
       if (response.success ) {
-        showSnackBar(event.context,S.of(event.context).OTP_sent_successfully );
+        emit(const OTPState.success());
       } else {
-        showSnackBar(event.context,'${S.of(event.context).Failed_to_send_OTP}: ${response.message}');
+         emit(OTPState.faliure(response.message));
       }
     } on DioException catch (err) {
-         final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message'],).toString();
-         showSnackBar(event.context,errorMessage );
+         final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message']).toString();
+        emit(OTPState.error(errorMessage));
   } catch (e) {
-      showSnackBar(event.context,'${S.of(event.context).General_sending_error}: $e');
+      emit(OTPState.error('General sending error: $e'));
   }
   }
 
@@ -49,16 +46,15 @@ OTPBloc() : super(const OTPState.initial()) {
       if (response.success ) {
         dataList=response.data.profile;
         emit(const OTPState.verified());
-        
-      } else {
-        showSnackBar(event.context,'${S.of(event.context).Failed_to_verify_OTP}: ${response.message}');
+      }  else {
+         emit(OTPState.faliure(response.message));
       }
     } on DioException catch (err) {
          final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message']).toString();
-         showSnackBar(event.context,errorMessage );
+        emit(OTPState.error(errorMessage));
   } catch (e) {
-      showSnackBar(event.context,'${S.of(event.context).General_verify_error}: $e');
-    }
+      emit(OTPState.error('General sending error: $e'));
+  }
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {

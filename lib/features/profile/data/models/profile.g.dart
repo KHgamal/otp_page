@@ -11,11 +11,11 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) => Profile(
       image: json['image'] as String?,
       birthdate: json['birthdate'] as String?,
       phone: json['phone'] as String?,
-      countryName: json['country_name'] as String?,
+      countryName: json['countryName'] as String?,
       email: json['email'] as String?,
       name: json['name'] as String?,
-      userNationality: json['user_nationality'] as String?,
-      paymentType: json['payment_type'] as String?,
+      userNationality: json['userNationality'] as String?,
+      paymentType: json['paymentType'] as String?,
       currency: json['currency'] as String?,
     );
 
