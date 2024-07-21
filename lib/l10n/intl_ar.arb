@@ -12,5 +12,28 @@
   "arabic": "العربية",
   "Enter_valid_value" : "يرجى إدخال قيمة صحيحة",
   "field_is_required": "يجب إدخال قيمة",
-  "otp_length" :"يجب أن يكون طول كلمة المرور 4"
+  "otp_length" :"يجب أن يكون طول رمز التحقق 4",
+
+  "OTP_sent_successfully": "تم إرسال رمز التحقق بنجاح",
+  "Failed_to_send_OTP": "فشل في إرسال رمز التحقق",
+  "General_sending_error": "خطأ عام في الإرسال",
+  "Failed_to_verify_OTP": "فشل في التحقق من رمز التحقق",
+  "General_verify_error": "خطأ عام في التحقق",
+
+  "request_cancelled": "تم إلغاء الطلب إلى الخادم.",
+  "connection_timeout": "انتهت مهلة الاتصال.",
+  "receive_timeout": "حدث مهلة استقبال.",
+  "send_timeout": "مهلة إرسال الطلب.",
+  "no_internet": "لا يوجد اتصال بالإنترنت.",
+  "unexpected_error": "حدث خطأ غير متوقع.",
+  "something_went_wrong": "هناك خطأ ما.",
+  "authentication_failed": "فشل التحقق من الهوية.",
+  "access_denied": "المستخدم المصادق عليه غير مسموح له بالوصول إلى نقطة النهاية المحددة.",
+  "resource_not_found": "المورد المطلوب غير موجود.",
+  "method_not_allowed": "الطريقة غير مسموح بها. يرجى التحقق من العنوان المسموح به لطرق HTTP المسموح بها.",
+  "unsupported_media_type": "نوع الوسائط غير مدعوم. نوع المحتوى المطلوب أو رقم الإصدار غير صالح.",
+  "data_validation_failed": "فشل التحقق من صحة البيانات.",
+  "too_many_requests": "عدد كبير جدًا من الطلبات.",
+  "internal_server_error": "خطأ في الخادم الداخلي.",
+  "oops_something_went_wrong": "عذرًا، حدث خطأ ما!"
 }

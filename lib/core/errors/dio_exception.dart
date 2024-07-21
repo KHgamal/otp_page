@@ -1,60 +1,63 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+
+import '../../generated/l10n.dart';
 
 class DioExceptionModel implements Exception {
   late String errorMessage;
 
-  DioExceptionModel.fromDioError(DioException dioError,message) {
+  DioExceptionModel.fromDioError(DioException dioError, BuildContext context, String message) {
     switch (dioError.type) {
       case DioExceptionType.cancel:
-        errorMessage = 'Request to the server was cancelled.';
+        errorMessage = S.of(context).request_cancelled;
         break;
       case DioExceptionType.connectionTimeout:
-        errorMessage = 'Connection timed out.';
+        errorMessage = S.of(context).connection_timeout;
         break;
       case DioExceptionType.receiveTimeout:
-        errorMessage = 'Receiving timeout occurred.';
+        errorMessage = S.of(context).receive_timeout;
         break;
       case DioExceptionType.sendTimeout:
-        errorMessage = 'Request send timeout.';
+        errorMessage = S.of(context).send_timeout;
         break;
       case DioExceptionType.badResponse:
-        errorMessage = _handleStatusCode(dioError.response?.statusCode,message);
+        errorMessage = _handleStatusCode(dioError.response?.statusCode, context, message);
         break;
       case DioExceptionType.unknown:
         if (dioError.message!.contains('SocketException')) {
-          errorMessage = 'No Internet.';
+          errorMessage = S.of(context).no_internet;
           break;
         }
-        errorMessage = 'Unexpected error occurred.';
+        errorMessage = S.of(context).unexpected_error;
         break;
       default:
-        errorMessage = 'Something went wrong';
+        errorMessage = S.of(context).something_went_wrong;
         break;
     }
   }
 
-  String _handleStatusCode(int? statusCode,message) {
+  String _handleStatusCode(int? statusCode, BuildContext context, String message) {
     switch (statusCode) {
       case 400:
         return message;
       case 401:
-        return 'Authentication failed.';
+        return S.of(context).authentication_failed;
       case 403:
-        return 'The authenticated user is not allowed to access the specified API endpoint.';
+        return S.of(context).access_denied;
       case 404:
-        return 'The requested resource does not exist.';
+        return S.of(context).resource_not_found;
       case 405:
-        return 'Method not allowed. Please check the Allow header for the allowed HTTP methods.';
+        return S.of(context).method_not_allowed;
       case 415:
-        return 'Unsupported media type. The requested content type or version number is invalid.';
+        return S.of(context).unsupported_media_type;
       case 422:
-        return 'Data validation failed.';
+        return S.of(context).data_validation_failed;
       case 429:
-        return 'Too many requests.';
+        return S.of(context).too_many_requests;
       case 500:
-        return 'Internal server error.';
+        return S.of(context).internal_server_error;
       default:
-        return 'Oops something went wrong!';
+        return S.of(context).oops_something_went_wrong;
     }
   }
 

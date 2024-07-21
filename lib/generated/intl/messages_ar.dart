@@ -26,9 +26,27 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Enter_valid_value":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال قيمة صحيحة"),
+        "Failed_to_send_OTP":
+            MessageLookupByLibrary.simpleMessage("فشل في إرسال رمز التحقق"),
+        "Failed_to_verify_OTP":
+            MessageLookupByLibrary.simpleMessage("فشل في التحقق من رمز التحقق"),
+        "General_sending_error":
+            MessageLookupByLibrary.simpleMessage("خطأ عام في الإرسال"),
+        "General_verify_error":
+            MessageLookupByLibrary.simpleMessage("خطأ عام في التحقق"),
         "OTPVerifiedSuccessfully":
             MessageLookupByLibrary.simpleMessage("تم التحقق من OTP بنجاح"),
+        "OTP_sent_successfully":
+            MessageLookupByLibrary.simpleMessage("تم إرسال رمز التحقق بنجاح"),
+        "access_denied": MessageLookupByLibrary.simpleMessage(
+            "المستخدم المصادق عليه غير مسموح له بالوصول إلى نقطة النهاية المحددة."),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "authentication_failed":
+            MessageLookupByLibrary.simpleMessage("فشل التحقق من الهوية."),
+        "connection_timeout":
+            MessageLookupByLibrary.simpleMessage("انتهت مهلة الاتصال."),
+        "data_validation_failed":
+            MessageLookupByLibrary.simpleMessage("فشل التحقق من صحة البيانات."),
         "english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
         "enterOtpSent": MessageLookupByLibrary.simpleMessage(
             "ادخل رمز التحقق المرسل على جوالك"),
@@ -36,13 +54,37 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يجب إدخال قيمة"),
         "incorrectOtp":
             MessageLookupByLibrary.simpleMessage("رمز التحقق غير صحيح"),
+        "internal_server_error":
+            MessageLookupByLibrary.simpleMessage("خطأ في الخادم الداخلي."),
+        "method_not_allowed": MessageLookupByLibrary.simpleMessage(
+            "الطريقة غير مسموح بها. يرجى التحقق من العنوان المسموح به لطرق HTTP المسموح بها."),
+        "no_internet":
+            MessageLookupByLibrary.simpleMessage("لا يوجد اتصال بالإنترنت."),
+        "oops_something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("عذرًا، حدث خطأ ما!"),
         "otpVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
         "otp_length": MessageLookupByLibrary.simpleMessage(
-            "يجب أن يكون طول كلمة المرور 4"),
+            "يجب أن يكون طول رمز التحقق 4"),
+        "receive_timeout":
+            MessageLookupByLibrary.simpleMessage("حدث مهلة استقبال."),
+        "request_cancelled":
+            MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب إلى الخادم."),
         "resend": MessageLookupByLibrary.simpleMessage("إعادة ارسال"),
         "resendIn": m0,
+        "resource_not_found":
+            MessageLookupByLibrary.simpleMessage("المورد المطلوب غير موجود."),
+        "send_timeout":
+            MessageLookupByLibrary.simpleMessage("مهلة إرسال الطلب."),
+        "something_went_wrong":
+            MessageLookupByLibrary.simpleMessage("هناك خطأ ما."),
         "sub_title": MessageLookupByLibrary.simpleMessage("هوست"),
         "title": MessageLookupByLibrary.simpleMessage("قولدن"),
+        "too_many_requests":
+            MessageLookupByLibrary.simpleMessage("عدد كبير جدًا من الطلبات."),
+        "unexpected_error":
+            MessageLookupByLibrary.simpleMessage("حدث خطأ غير متوقع."),
+        "unsupported_media_type": MessageLookupByLibrary.simpleMessage(
+            "نوع الوسائط غير مدعوم. نوع المحتوى المطلوب أو رقم الإصدار غير صالح."),
         "verify": MessageLookupByLibrary.simpleMessage("تحقق")
       };
 }

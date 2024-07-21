@@ -12,5 +12,28 @@
   "arabic": "Arabic",
   "Enter_valid_value": "Please enter a valid value",
   "field_is_required":"field is required",
-  "otp_length" :"otp length must be 4"
+  "otp_length" :"otp length must be 4",
+
+  "OTP_sent_successfully":"OTP sent successfully",
+  "Failed_to_send_OTP":"Failed to send OTP",
+  "General_sending_error" : "General sending error" ,
+  "Failed_to_verify_OTP" : "Failed to verify OTP",
+  "General_verify_error" :"General verify error",
+
+  "request_cancelled": "Request to the server was cancelled.",
+  "connection_timeout": "Connection timed out.",
+  "receive_timeout": "Receiving timeout occurred.",
+  "send_timeout": "Request send timeout.",
+  "no_internet": "No Internet.",
+  "unexpected_error": "Unexpected error occurred.",
+  "something_went_wrong": "Something went wrong.",
+  "authentication_failed": "Authentication failed.",
+  "access_denied": "The authenticated user is not allowed to access the specified API endpoint.",
+  "resource_not_found": "The requested resource does not exist.",
+  "method_not_allowed": "Method not allowed. Please check the Allow header for the allowed HTTP methods.",
+  "unsupported_media_type": "Unsupported media type. The requested content type or version number is invalid.",
+  "data_validation_failed": "Data validation failed.",
+  "too_many_requests": "Too many requests.",
+  "internal_server_error": "Internal server error.",
+  "oops_something_went_wrong": "Oops something went wrong!"
  }

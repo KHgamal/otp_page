@@ -6,16 +6,17 @@ import 'package:otp_page/core/errors/dio_exception.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
 
+import '../../../../../generated/l10n.dart';
 import '../../../data/services/api_service.dart';
 import '../../../ui/widgets/snack_bar.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
- late Profile dataList ;
+  late Profile dataList ;
   final ApiService apiService = ApiService();
   final TextEditingController otpController = TextEditingController();
-   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
 
@@ -30,15 +31,15 @@ OTPBloc() : super(const OTPState.initial()) {
     try {
       final response = await apiService.sendOtp(event.countryCode, event.phone);
       if (response.success ) {
-        showSnackBar(event.context, 'OTP sent successfully');
+        showSnackBar(event.context,S.of(event.context).OTP_sent_successfully );
       } else {
-        showSnackBar(event.context, 'Failed to send OTP: ${response.message}');
+        showSnackBar(event.context,'${S.of(event.context).Failed_to_send_OTP}: ${response.message}');
       }
     } on DioException catch (err) {
-         final errorMessage = DioExceptionModel.fromDioError(err,err.response!.data['message']).toString();
+         final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message'],).toString();
          showSnackBar(event.context,errorMessage );
   } catch (e) {
-      showSnackBar(event.context,'General sending error: $e');
+      showSnackBar(event.context,'${S.of(event.context).General_sending_error}: $e');
   }
   }
 
@@ -50,13 +51,13 @@ OTPBloc() : super(const OTPState.initial()) {
         emit(const OTPState.verified());
         
       } else {
-        showSnackBar(event.context, 'Failed to verify OTP: ${response.message}');
+        showSnackBar(event.context,'${S.of(event.context).Failed_to_verify_OTP}: ${response.message}');
       }
     } on DioException catch (err) {
-         final errorMessage = DioExceptionModel.fromDioError(err,err.response!.data['message']).toString();
+         final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message']).toString();
          showSnackBar(event.context,errorMessage );
   } catch (e) {
-      showSnackBar(event.context,'General verify error: $e');
+      showSnackBar(event.context,'${S.of(event.context).General_verify_error}: $e');
     }
   }
 

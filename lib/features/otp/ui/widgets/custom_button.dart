@@ -5,7 +5,6 @@ import 'package:otp_page/features/otp/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../../profile/UI/views/profile_view.dart';
 import '../../controller/bloc/otp/otp_bloc.dart';
 import '../../controller/bloc/otp/otp_state.dart';
 
@@ -19,7 +18,7 @@ class CustomButton extends StatelessWidget {
     final otpBloc = context.read<OTPBloc>();
     return  BlocListener<OTPBloc, OTPState>(
       listener: (context, state) {
-        state.whenOrNull(verified: ()=> context.go('/profile')); 
+        state.whenOrNull(verified: ()=> context.pushReplacement('/profile')); 
       },
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
