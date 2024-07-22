@@ -16,10 +16,10 @@ class Profileview extends StatelessWidget {
       ProfileInfo(Icons.email, profileInfo.email!),
       ProfileInfo(Icons.card_giftcard, profileInfo.birthdate!),
       ProfileInfo(Icons.phone, profileInfo.phone!),
-      ProfileInfo(Icons.language, profileInfo.countryName!),
-      ProfileInfo(Icons.flag, profileInfo.userNationality!),
+      ProfileInfo(Icons.language, profileInfo.country_name!),
+      ProfileInfo(Icons.flag, profileInfo.user_nationality!),
       ProfileInfo(Icons.money, profileInfo.currency!),
-      ProfileInfo(Icons.payment, profileInfo.paymentType!),
+      ProfileInfo(Icons.payment, profileInfo.payment_type!),
     ];
     return  SafeArea(
       child: Scaffold(

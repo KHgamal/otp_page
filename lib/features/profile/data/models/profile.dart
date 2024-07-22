@@ -8,12 +8,12 @@ class Profile {
   final String? image; // ------------------------------------
   final String? birthdate; //----------------------------------
   final String? phone; //----------------------------------
-  final String? countryName; //----------------------------------
+  final String? country_name; //----------------------------------
   final String? email; //----------------------------------
   final String? name;  //----------------------------------
-  final String? userNationality; //----------------------------------
+  final String? user_nationality; //----------------------------------
 
-  final String? paymentType; //----------------------------------
+  final String? payment_type; //----------------------------------
   final String? currency; //----------------------------------
 
   Profile({
@@ -21,11 +21,11 @@ class Profile {
     required this.image,
     required this.birthdate,
     required this.phone,
-    required this.countryName,
+    required this.country_name,
     required this.email,
     required this.name,
-    required this.userNationality,
-    required this.paymentType,
+    required this.user_nationality,
+    required this.payment_type,
     required this.currency,
   });
 
