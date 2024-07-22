@@ -7,13 +7,26 @@ import '../../../../core/common/styles/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
 import '../../controller/bloc/otp/otp_bloc.dart';
+import '../../controller/bloc/otp/otp_event.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
 import '../widgets/resend_bloc.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+  @override
+  void initState() {
+    final otpBloc = context.read<OTPBloc>();
+    super.initState();
+    otpBloc.add(const OTPEvent.startResendTimer());
+    otpBloc.add(SendOTP('+966', '511111111', context));
+  }
   @override
   Widget build(BuildContext context) {
    final otpBloc = context.read<OTPBloc>();

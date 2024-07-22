@@ -58,6 +58,7 @@ OTPBloc() : super(const OTPState.initial()) {
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {
+  //  print("-------------------------------------------");
     if (_canResend) {
       _canResend = false;
       emit(const OTPState.resend(45));

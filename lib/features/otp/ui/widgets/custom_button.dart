@@ -26,10 +26,8 @@ class CustomButton extends StatelessWidget {
             fixedSize: const Size(400, 45)),
         onPressed: () {
           if (otpBloc.formKey.currentState!.validate()) {
-             otpBloc.add(SendOTP('+966', '511111111', context));
-            otpBloc
-                .add(OTPEvent.verifyOTP("+966", "511111111", "1111", context));
-          
+             otpBloc.add(OTPEvent.verifyOTP("+966", "511111111", 
+             otpBloc.otpController.text, context));       
           } else {
             showSnackBar(context, S.of(context).Enter_valid_value);
           }
