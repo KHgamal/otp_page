@@ -1,9 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../../core/utils/helpers/di/injectable_config.dart';
+import '../../../../../core/utils/helpers/shared_preferences_service.dart';
 import 'preference_event.dart';
 import 'preference_state.dart';
 
 class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
+  final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   PreferenceBloc()
       : super(const PreferenceState(isDarkTheme: true, locale: 'en')) {
     on<ChangeThemeEvent>(_onChangeTheme);
@@ -12,23 +14,20 @@ class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
   }
 
   Future<void> _loadPreferences() async {
-    final prefs = await SharedPreferences.getInstance();
-    final isDarkTheme = prefs.getBool('isDarkTheme') ?? true;
-    final locale = prefs.getString('locale') ?? 'en';
+    final isDarkTheme =  prefsService.isDarkTheme() ?? true;
+    final locale =prefsService.getLocale()??"en";
 
     emit(PreferenceState(isDarkTheme: isDarkTheme, locale: locale));
   }
 
   Future<void> _onChangeTheme(ChangeThemeEvent event, Emitter<PreferenceState> emit) async {
     emit(state.copyWith(isDarkTheme: event.isDark));
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('isDarkTheme', event.isDark);
+    prefsService.saveTheme(event.isDark);
   }
 
   Future<void> _onChangeLocale(ChangeLocaleEvent event, Emitter<PreferenceState> emit) async {
     emit(state.copyWith(locale: event.locale));
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('locale', event.locale);
+    prefsService.saveLocale(event.locale);
   }
 }
 

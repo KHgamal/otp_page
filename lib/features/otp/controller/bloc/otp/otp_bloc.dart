@@ -3,10 +3,11 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
-import 'package:otp_page/core/utils/helpers/di/app_module.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
+import '../../../../../core/utils/helpers/di/injectable_config.dart';
 import '../../../../../core/utils/helpers/shared_preferences_service.dart';
 import '../../../data/services/api_service.dart';
 import 'otp_event.dart';
@@ -15,7 +16,7 @@ import 'otp_state.dart';
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   late Profile dataList ;
-  final ApiService apiService = ApiService();
+  final ApiService apiService = GetIt.instance<ApiService>();
   final TextEditingController otpController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;

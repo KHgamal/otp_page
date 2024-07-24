@@ -8,6 +8,7 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:otp_page/core/utils/helpers/di/injectable_config.dart' as _i228;
@@ -31,6 +32,7 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefs,
       preResolve: true,
     );
+    gh.singleton<_i361.Dio>(() => registerModule.provideDio());
     gh.lazySingleton<_i995.SharedPreferencesService>(
         () => _i995.SharedPreferencesService(gh<_i460.SharedPreferences>()));
     return this;

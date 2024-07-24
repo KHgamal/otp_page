@@ -7,12 +7,11 @@ import 'package:otp_page/features/otp/controller/bloc/preference/preference_stat
 
 import 'core/common/styles/gallery_theme.dart';
 import 'core/navigation/app_router.dart';
-import 'core/utils/helpers/di/app_module.dart';
 import 'core/utils/helpers/di/injectable_config.dart';
 
-
-void main() { 
-  configureDependencies();
+void main() async {
+ WidgetsFlutterBinding.ensureInitialized(); 
+  configureDependencies(); 
   runApp(const MyApp());
 }
 
@@ -37,7 +36,7 @@ class MyApp extends StatelessWidget {
               title: 'OTP Page',
               debugShowCheckedModeBanner: false,
               theme: AppTheme.lightTheme ,
-              darkTheme:  AppTheme.darkTheme,
+              darkTheme: AppTheme.darkTheme,
                themeMode: state.isDarkTheme ?ThemeMode.dark
                : ThemeMode.light,              
                locale: Locale(state.locale),
