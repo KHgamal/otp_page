@@ -25,7 +25,7 @@ class CustomButton extends StatelessWidget {
             backgroundColor: Theme.of(context).colorScheme.primary,
             fixedSize: const Size(400, 45)),
         onPressed: () {
-          if (otpBloc.formKey.currentState!.validate()) {
+          if (otpBloc.formKey.currentState!.validate())  {
              otpBloc.add(OTPEvent.verifyOTP("+966", "511111111", 
              otpBloc.otpController.text, context));       
           } else {

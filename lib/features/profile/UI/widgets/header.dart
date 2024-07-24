@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:otp_page/features/otp/controller/bloc/otp/otp_bloc.dart';
+
+import '../../../../core/utils/helpers/di/app_module.dart';
+
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -8,7 +9,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color=Theme.of(context).colorScheme;
-    final profileInfo=context.read<OTPBloc>().dataList;
+final profileInfo =fetchProfileInfo();
     return Container(
        margin: EdgeInsets.only(top:MediaQuery.of(context).viewPadding.top
               ,bottom:8),

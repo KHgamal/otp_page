@@ -1,15 +1,19 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
+import 'package:otp_page/core/utils/helpers/di/app_module.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
+import '../../../../../core/utils/helpers/shared_preferences_service.dart';
 import '../../../data/services/api_service.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
+  final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   late Profile dataList ;
   final ApiService apiService = ApiService();
   final TextEditingController otpController = TextEditingController();
@@ -44,7 +48,7 @@ OTPBloc() : super(const OTPState.initial()) {
     try {
       final response = await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
       if (response.success ) {
-        dataList=response.data.profile;
+        await prefsService.saveString('profiledata',jsonEncode( response.data.profile.toJson()));
         emit(const OTPState.verified());
       }  else {
          emit(OTPState.faliure(response.message));
@@ -58,7 +62,6 @@ OTPBloc() : super(const OTPState.initial()) {
   }
 
   void _onStartResendTimer(StartResendTimer event, Emitter<OTPState> emit) {
-  //  print("-------------------------------------------");
     if (_canResend) {
       _canResend = false;
       emit(const OTPState.resend(45));

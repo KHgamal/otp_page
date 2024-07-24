@@ -13,7 +13,7 @@ final GoRouter router = GoRouter(
          GoRoute(
           path: '/profile',
           builder: ( context, GoRouterState state) {
-            return const Profileview();
+            return const ProfileView();
           },
         ),
    

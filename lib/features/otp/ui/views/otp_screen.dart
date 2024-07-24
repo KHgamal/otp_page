@@ -12,55 +12,63 @@ import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
 import '../widgets/resend_bloc.dart';
 
-class OtpScreen extends StatefulWidget {
+class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
 
   @override
-  State<OtpScreen> createState() => _OtpScreenState();
+  Widget build(BuildContext context) {
+
+    return BlocProvider( 
+      create: (context) => OTPBloc()..add(const OTPEvent.startResendTimer())..
+      add(SendOTP('+966', '511111111', context),),
+      child:const SafeArea(
+        child: Scaffold(
+          body: Padding(
+              padding: EdgeInsets.all(16),
+              child: FormBody()),
+        ),
+      ),
+    );
+  }
 }
 
-class _OtpScreenState extends State<OtpScreen> {
-  @override
-  void initState() {
-    final otpBloc = context.read<OTPBloc>();
-    super.initState();
-    otpBloc.add(const OTPEvent.startResendTimer());
-    otpBloc.add(SendOTP('+966', '511111111', context));
-  }
+class FormBody extends StatelessWidget {
+  const FormBody({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-   final otpBloc = context.read<OTPBloc>();
-  
-    final customColors = Theme.of(context).extension<CustomColors>()!;
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Form(
-              key: otpBloc.formKey,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                   const PreferenceSection(),
-                   const SizedBox(height: 14),
-                   const Logo(),
-                   const SizedBox(height: 14),
-                   Text( S.of(context).otpVerification,style: 
-                   TextStyle(fontSize: 22,color:customColors.title ,),),
-                    const SizedBox(height: 14),
-                     Text(S.of(context).enterOtpSent,style: 
-                     TextStyle(fontSize: 22,color: customColors.subTitle  )),
-                    const SizedBox(height: 30),
-                    const Otp(),
-                    const SizedBox(height: 50),
-                    const CustomButton(),
-                    const SizedBox(height: 20),
-                    const ResendSection(),
-                  ],
-                ),
+     final customColors = Theme.of(context).extension<CustomColors>()!;
+    return Form(
+      key:context.read<OTPBloc>().formKey,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const PreferenceSection(),
+            const SizedBox(height: 14),
+            const Logo(),
+            const SizedBox(height: 14),
+            Text(
+              S.of(context).otpVerification,
+              style: TextStyle(
+                fontSize: 22,
+                color: customColors.title,
               ),
-            )),
+            ),
+            const SizedBox(height: 14),
+            Text(S.of(context).enterOtpSent,
+                style: TextStyle(
+                    fontSize: 22, color: customColors.subTitle)),
+            const SizedBox(height: 30),
+            const Otp(),
+            const SizedBox(height: 50),
+            const CustomButton(),
+            const SizedBox(height: 20),
+            const ResendSection(),
+          ],
+        ),
       ),
     );
   }

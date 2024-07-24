@@ -10,7 +10,6 @@ class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
     on<ChangeLocaleEvent>(_onChangeLocale);
     _loadPreferences();
   }
-  String get locale => state.locale;
 
   Future<void> _loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
