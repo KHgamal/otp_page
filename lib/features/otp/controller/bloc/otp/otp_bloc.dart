@@ -16,7 +16,7 @@ import 'otp_state.dart';
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   late Profile dataList ;
-  final ApiService apiService = GetIt.instance<ApiService>();
+  final ApiService apiService = getIt<ApiService>();
   final TextEditingController otpController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;

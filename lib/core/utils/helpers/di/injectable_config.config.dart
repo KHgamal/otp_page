@@ -14,6 +14,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:otp_page/core/utils/helpers/di/injectable_config.dart' as _i228;
 import 'package:otp_page/core/utils/helpers/shared_preferences_service.dart'
     as _i995;
+import 'package:otp_page/features/otp/data/services/api_client.dart' as _i560;
+import 'package:otp_page/features/otp/data/services/api_service.dart' as _i1050;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -32,7 +34,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefs,
       preResolve: true,
     );
-    gh.singleton<_i361.Dio>(() => registerModule.provideDio());
+    gh.lazySingleton<_i361.Dio>(() => registerModule.provideDio);
+    gh.lazySingleton<_i560.ApiClient>(() => registerModule.apiClient);
+    gh.lazySingleton<_i1050.ApiService>(() => registerModule.apiService);
     gh.lazySingleton<_i995.SharedPreferencesService>(
         () => _i995.SharedPreferencesService(gh<_i460.SharedPreferences>()));
     return this;
