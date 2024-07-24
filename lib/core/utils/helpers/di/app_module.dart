@@ -6,8 +6,8 @@ import 'package:otp_page/core/utils/helpers/di/injectable_config.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
 import '../shared_preferences_service.dart';
-/*  final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
- final language= prefsService.getLocale(); */
+ final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
+ final language= prefsService.getLocale();
  
   final logInterceptor = LogInterceptor(
   request: true,

@@ -24,7 +24,7 @@ abstract class RegisterModule {
     final Dio dioInstance=Dio(BaseOptions(
           headers: {
             'X-SECRET-KEY': 'GOLDEN-5mm0jUsfOwCrAANQ6X_uoJkexlL',
-            'X-Language': "en",
+            'X-Language': language,
             'Accept': 'application/json',
             'Content-Type': 'application/json',
           },

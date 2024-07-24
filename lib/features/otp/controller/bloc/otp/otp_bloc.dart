@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
