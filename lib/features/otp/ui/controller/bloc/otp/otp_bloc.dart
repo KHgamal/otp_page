@@ -10,20 +10,20 @@ import 'package:otp_page/features/profile/data/models/profile.dart';
 
 import '../../../../../../core/utils/helpers/di/injectable_config.dart';
 import '../../../../../../core/utils/helpers/shared_preferences_service.dart';
-import '../../../../data/services/api_service.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
 
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   late Profile dataList ;
-  final ApiService apiService = getIt<ApiService>();
   final TextEditingController otpController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
+   final SendUseCase sendUseCase;
+  final VerifyUseCase verifyUseCase;
 
-OTPBloc() : super(const OTPState.initial()) {
+OTPBloc({required this.sendUseCase, required this.verifyUseCase}) : super(const OTPState.initial()) {
     on<SendOTP>(_onSendOTP);
     on<VerifyOTP>(_onVerifyOTP);
     on<StartResendTimer>(_onStartResendTimer);
@@ -32,7 +32,7 @@ OTPBloc() : super(const OTPState.initial()) {
 
  Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit ) async {
     try {
-      final response = await apiService.sendOtp( SendOTPParameters(
+      final response = await sendUseCase( SendOTPParameters(
       code: event.countryCode,
       phone: event.phone,
     ));
@@ -51,7 +51,7 @@ OTPBloc() : super(const OTPState.initial()) {
 
   Future<void> _onVerifyOTP(VerifyOTP event, Emitter<OTPState> emit) async {
     try {
-      final response = await apiService.verifyOtp(VerifyOTPParameters(  
+      final response = await verifyUseCase(VerifyOTPParameters(  
             code: event.countryCode,
             phone: event.phone,
              otp: event.enteredCode));

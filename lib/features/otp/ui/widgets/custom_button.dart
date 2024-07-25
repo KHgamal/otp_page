@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
+import '../../../../core/utils/helpers/di/app_module.dart';
 import '../../../../generated/l10n.dart';
 import '../controller/bloc/otp/otp_bloc.dart';
 import '../controller/bloc/otp/otp_state.dart';
@@ -15,7 +16,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final otpBloc = context.read<OTPBloc>();
+
     return  BlocListener<OTPBloc, OTPState>(
       listener: (context, state) {
         state.whenOrNull(verified: ()=> context.pushReplacement('/profile')); 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_bloc.dart';
-import 'package:provider/provider.dart';
 
+import '../../../../core/utils/helpers/di/app_module.dart';
 import '../../../../generated/l10n.dart';
 import '../controller/bloc/otp/otp_event.dart';
 
@@ -10,7 +9,6 @@ class ResendButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final otpBloc=context.read<OTPBloc>();
     return TextButton(
       onPressed: () {
        otpBloc.add(const OTPEvent.startResendTimer());

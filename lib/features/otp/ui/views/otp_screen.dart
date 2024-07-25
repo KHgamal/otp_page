@@ -4,9 +4,9 @@ import 'package:otp_page/features/otp/ui/widgets/logo_image.dart';
 import 'package:otp_page/features/otp/ui/widgets/otp.dart';
 
 import '../../../../core/common/styles/app_colors.dart';
+import '../../../../core/utils/helpers/di/app_module.dart';
 import '../../../../generated/l10n.dart';
 
-import '../controller/bloc/otp/otp_bloc.dart';
 import '../controller/bloc/otp/otp_event.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
@@ -17,9 +17,8 @@ class OtpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return BlocProvider( 
-      create: (context) => OTPBloc()..add(const OTPEvent.startResendTimer())..
+      create: (context) => otpBloc..add(const OTPEvent.startResendTimer())..
       add(SendOTP('+966', '511111111', context),),
       child:const SafeArea(
         child: Scaffold(
@@ -41,7 +40,7 @@ class FormBody extends StatelessWidget {
   Widget build(BuildContext context) {
      final customColors = Theme.of(context).extension<CustomColors>()!;
     return Form(
-      key:context.read<OTPBloc>().formKey,
+      key:otpBloc.formKey,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

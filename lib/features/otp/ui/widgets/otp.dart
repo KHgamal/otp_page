@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
+import '../../../../core/utils/helpers/di/app_module.dart';
 import '../../../../generated/l10n.dart';
-import '../controller/bloc/otp/otp_bloc.dart';
 
 class Otp extends StatelessWidget {
   const Otp({super.key,});
@@ -22,7 +21,7 @@ class Otp extends StatelessWidget {
           return null;
           },
         showCursor: false,
-        controller: context.read<OTPBloc>().otpController,
+        controller: otpBloc.otpController,
         keyboardType: TextInputType.number,
         appContext: context,
         length: 4,
