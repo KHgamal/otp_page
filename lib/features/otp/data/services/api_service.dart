@@ -1,22 +1,41 @@
 
-import '../../../profile/data/models/response.dart';
-import '../models/models.dart';
-import 'api_client.dart';
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
+import 'package:otp_page/features/otp/data/models/models.dart';
+import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart';
+import 'package:otp_page/features/profile/data/models/response.dart';
 
-class ApiService {
+import '../../../../core/errors/failure.dart';
+import '../../domain/repository/repository.dart';
+import '../../domain/usecase/send_use_case.dart';
+import 'api_client.dart';
+@LazySingleton(as: OtpRepository)
+class ApiService implements OtpRepository  {
   final ApiClient apiClient;
 
   ApiService({required this.apiClient});
 
-  Future<ApiResponse> sendOtp(String countryCode, String phone) async {
-    return  apiClient.sendOtp(
-       {"country_code":countryCode,"phone":phone}
+  @override
+  Future<Either<Failure,ApiResponse>> sendOtp(SendOTPParameters parameters) async {
+    final result= await  apiClient.sendOtp(
+       {"country_code":parameters.code,"phone":parameters.phone}
     );
+        try {
+      return Right(result);
+    } on ServerFailure catch (failure) {
+      return Left(ServerFailure(failure.toString()));
+    }
   }
 
-  Future<VerifyResponse> verifyOtp(String countryCode, String phone, String otp) async {
-    return apiClient.verifyOtp(
-      {"country_code":countryCode,"phone":phone,"otp":otp},
+  @override
+  Future<Either<Failure,VerifyResponse>> verifyOtp(VerifyOTPParameters parameters ) async {
+      final result = await  apiClient.verifyOtp(
+       {"country_code":parameters.code,"phone":parameters.phone,"otp":parameters.otp}
     );
+        try {
+      return Right(result);
+    } on ServerFailure catch (failure) {
+      return Left(ServerFailure(failure.toString()));
+    }
   }
 }

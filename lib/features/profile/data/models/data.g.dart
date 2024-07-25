@@ -7,11 +7,12 @@ part of 'data.dart';
 // **************************************************************************
 
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
-      profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
+      profile: const ProfileEntityConverter()
+          .fromJson(json['profile'] as Map<String, dynamic>),
       token: json['token'] as String,
     );
 
 Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
-      'profile': instance.profile,
+      'profile': const ProfileEntityConverter().toJson(instance.profile),
       'token': instance.token,
     };

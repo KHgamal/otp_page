@@ -6,9 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
-import '../../../../../core/utils/helpers/di/injectable_config.dart';
-import '../../../../../core/utils/helpers/shared_preferences_service.dart';
-import '../../../data/services/api_service.dart';
+import '../../../../../../core/utils/helpers/di/injectable_config.dart';
+import '../../../../../../core/utils/helpers/shared_preferences_service.dart';
+import '../../../../data/services/api_service.dart';
+import '../../../../domain/usecase/send_use_case.dart';
+import '../../../../domain/usecase/verify_use_case.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
 
@@ -30,12 +32,22 @@ OTPBloc() : super(const OTPState.initial()) {
 
  Future<void> _onSendOTP(SendOTP event, Emitter<OTPState> emit ) async {
     try {
-      final response = await apiService.sendOtp(event.countryCode, event.phone);
-      if (response.success ) {
-        emit(const OTPState.success());
-      } else {
-         emit(OTPState.faliure(response.message));
-      }
+      final response = await apiService.sendOtp( SendOTPParameters(
+      code: event.countryCode,
+      phone: event.phone,
+    ));
+     response.fold(
+      (fail) {
+        emit(OTPState.faliure(fail.toString()));
+      },
+      (apiResponse) {
+        if (apiResponse.success) {
+          emit(const OTPState.success());
+        } else {
+          emit(OTPState.faliure(apiResponse.message));
+        }
+      },
+    );
     } on DioException catch (err) {
          final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message']).toString();
         emit(OTPState.error(errorMessage));
@@ -46,13 +58,25 @@ OTPBloc() : super(const OTPState.initial()) {
 
   Future<void> _onVerifyOTP(VerifyOTP event, Emitter<OTPState> emit) async {
     try {
-      final response = await apiService.verifyOtp(event.countryCode, event.phone, event.enteredCode);
-      if (response.success ) {
-        await prefsService.saveString('profiledata',jsonEncode( response.data.profile.toJson()));
-        emit(const OTPState.verified());
-      }  else {
-         emit(OTPState.faliure(response.message));
-      }
+      final response = await apiService.verifyOtp( VerifyOTPParameters(
+      code: event.countryCode,
+      phone: event.phone,
+      otp: event.enteredCode,
+    ));
+      response.fold(
+      (failure) {
+        emit(OTPState.faliure(failure.toString()));
+      },
+      (apiResponse)  {
+        if (apiResponse.success) {
+           prefsService.saveString(
+              'profiledata', jsonEncode((apiResponse.data.profile as Profile).toJson()));
+          emit(const OTPState.verified());
+        } else {
+          emit(OTPState.faliure(apiResponse.message));
+        }
+      },
+    );
     } on DioException catch (err) {
          final errorMessage = DioExceptionModel.fromDioError(err,event.context,err.response!.data['message']).toString();
         emit(OTPState.error(errorMessage));

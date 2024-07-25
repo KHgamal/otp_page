@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:otp_page/generated/l10n.dart';
-import 'package:otp_page/features/otp/controller/bloc/preference/preference_bloc.dart';
-import 'package:otp_page/features/otp/controller/bloc/preference/preference_state.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_bloc.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_state.dart';
 
 import 'core/common/styles/gallery_theme.dart';
 import 'core/navigation/app_router.dart';

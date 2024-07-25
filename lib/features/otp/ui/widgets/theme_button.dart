@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/features/otp/controller/bloc/preference/preference_event.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_event.dart';
 import 'package:provider/provider.dart';
 
-import '../../controller/bloc/preference/preference_bloc.dart';
+import '../controller/bloc/preference/preference_bloc.dart';
 
 
 class ThemeWidget extends StatelessWidget {

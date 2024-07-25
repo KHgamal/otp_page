@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:otp_page/features/otp/controller/bloc/otp/otp_event.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_event.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../controller/bloc/otp/otp_bloc.dart';
-import '../../controller/bloc/otp/otp_state.dart';
+import '../controller/bloc/otp/otp_bloc.dart';
+import '../controller/bloc/otp/otp_state.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.primary,
             fixedSize: const Size(400, 45)),
-        onPressed: () {
+        onPressed: ()  {
           if (otpBloc.formKey.currentState!.validate())  {
              otpBloc.add(OTPEvent.verifyOTP("+966", "511111111", 
              otpBloc.otpController.text, context));       

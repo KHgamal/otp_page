@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/features/otp/controller/bloc/otp/otp_bloc.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_bloc.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../controller/bloc/otp/otp_event.dart';
+import '../controller/bloc/otp/otp_event.dart';
 
 class ResendButton extends StatelessWidget {
   const ResendButton({super.key,});

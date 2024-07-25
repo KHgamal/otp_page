@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import '../../../../../core/utils/helpers/di/injectable_config.dart';
-import '../../../../../core/utils/helpers/shared_preferences_service.dart';
+import '../../../../../../core/utils/helpers/di/injectable_config.dart';
+import '../../../../../../core/utils/helpers/shared_preferences_service.dart';
 import 'preference_event.dart';
 import 'preference_state.dart';
 

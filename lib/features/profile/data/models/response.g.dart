@@ -8,7 +8,8 @@ part of 'response.dart';
 
 VerifyResponse _$VerifyResponseFromJson(Map<String, dynamic> json) =>
     VerifyResponse(
-      data: Data.fromJson(json['data'] as Map<String, dynamic>),
+      data: const DataEntityConverter()
+          .fromJson(json['data'] as Map<String, dynamic>),
       errors: json['errors'] as Map<String, dynamic>,
       message: json['message'] as String,
       success: json['success'] as bool,
@@ -16,7 +17,7 @@ VerifyResponse _$VerifyResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$VerifyResponseToJson(VerifyResponse instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': const DataEntityConverter().toJson(instance.data),
       'errors': instance.errors,
       'message': instance.message,
       'success': instance.success,

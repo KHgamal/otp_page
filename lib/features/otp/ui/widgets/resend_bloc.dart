@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/generated/l10n.dart';
-import 'package:otp_page/features/otp/controller/bloc/otp/otp_state.dart';
+import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_state.dart';
 import 'package:otp_page/features/otp/ui/widgets/snack_bar.dart';
 
-import '../../controller/bloc/otp/otp_bloc.dart';
+import '../controller/bloc/otp/otp_bloc.dart';
 import 'resend_button.dart';
 
 class ResendSection extends StatelessWidget {

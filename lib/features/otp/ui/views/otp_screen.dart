@@ -6,8 +6,8 @@ import 'package:otp_page/features/otp/ui/widgets/otp.dart';
 import '../../../../core/common/styles/app_colors.dart';
 import '../../../../generated/l10n.dart';
 
-import '../../controller/bloc/otp/otp_bloc.dart';
-import '../../controller/bloc/otp/otp_event.dart';
+import '../controller/bloc/otp/otp_bloc.dart';
+import '../controller/bloc/otp/otp_event.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
 import '../widgets/resend_bloc.dart';
