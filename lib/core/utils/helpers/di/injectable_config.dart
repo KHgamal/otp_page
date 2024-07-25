@@ -10,6 +10,7 @@ import '../../../../features/otp/data/services/api_client.dart';
 import '../../../../features/otp/data/services/api_service.dart';
 import '../../../../features/otp/domain/usecase/send_use_case.dart';
 import '../../../../features/otp/ui/controller/bloc/otp/otp_bloc.dart';
+import '../../../../features/otp/ui/controller/bloc/preference/preference_bloc.dart';
 
 
 GetIt getIt = GetIt.instance;
@@ -52,11 +53,14 @@ abstract class RegisterModule {
   @lazySingleton
   VerifyUseCase get verifyUseCase=> VerifyUseCase(otpRepository:apiService);
 
-  //bloc
+  //blocs
   @lazySingleton
   OTPBloc get otpBloc => OTPBloc(
     sendUseCase: sendUseCase,
     verifyUseCase: verifyUseCase,
   );
+  @lazySingleton
+  PreferenceBloc get preferenceBloc => PreferenceBloc();
+  
 }
 

@@ -24,6 +24,8 @@ import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart'
     as _i1068;
 import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_bloc.dart'
     as _i265;
+import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_bloc.dart'
+    as _i493;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -48,6 +50,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i11.SendUseCase>(() => registerModule.sendUseCase);
     gh.lazySingleton<_i1068.VerifyUseCase>(() => registerModule.verifyUseCase);
     gh.lazySingleton<_i265.OTPBloc>(() => registerModule.otpBloc);
+    gh.lazySingleton<_i493.PreferenceBloc>(() => registerModule.preferenceBloc);
     gh.lazySingleton<_i995.SharedPreferencesService>(
         () => _i995.SharedPreferencesService(gh<_i460.SharedPreferences>()));
     gh.lazySingleton<_i819.OtpRepository>(

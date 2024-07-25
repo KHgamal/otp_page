@@ -7,6 +7,7 @@ import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_s
 
 import 'core/common/styles/gallery_theme.dart';
 import 'core/navigation/app_router.dart';
+import 'core/utils/helpers/di/app_module.dart';
 import 'core/utils/helpers/di/injectable_config.dart';
 
 void main() async {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-        BlocProvider(create: (context) => PreferenceBloc(),
+        BlocProvider(create: (context) => preferenceBloc,
       child: BlocBuilder<PreferenceBloc, PreferenceState>(
         builder: (context, state) {
             return MaterialApp.router(

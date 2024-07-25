@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_event.dart';
-import 'package:provider/provider.dart';
 
-import '../controller/bloc/preference/preference_bloc.dart';
+import '../../../../core/utils/helpers/di/app_module.dart';
 
 
 class ThemeWidget extends StatelessWidget {
@@ -10,11 +9,10 @@ class ThemeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   final themeBloc = context.read<PreferenceBloc>();
     return IconButton(
            onPressed: () {
-              bool isDarkTheme = themeBloc.state.isDarkTheme;
-              themeBloc.add(PreferenceEvent.changeTheme(!isDarkTheme));
+              bool isDarkTheme = preferenceBloc.state.isDarkTheme;
+              preferenceBloc.add(PreferenceEvent.changeTheme(!isDarkTheme));
             },
       icon: const Icon(Icons.sunny),);
   }

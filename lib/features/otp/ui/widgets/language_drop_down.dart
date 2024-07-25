@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/helpers/di/app_module.dart';
 import '../../../../generated/l10n.dart';
-import '../controller/bloc/preference/preference_bloc.dart';
 import '../controller/bloc/preference/preference_event.dart';
 
 class LanguageDropDown extends StatelessWidget {
@@ -10,12 +9,11 @@ class LanguageDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final languageBloc= context.read<PreferenceBloc>();
     return  DropdownButton(
-      value: languageBloc.state.locale,
+      value: preferenceBloc.state.locale,
       onChanged: (value) {
         if (value != null) {
-          languageBloc.add(PreferenceEvent.changeLocale(value));
+          preferenceBloc.add(PreferenceEvent.changeLocale(value));
         }
       },
       items: [
