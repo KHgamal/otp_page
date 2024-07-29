@@ -47,14 +47,16 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i361.Dio>(() => registerModule.provideDio);
     gh.lazySingleton<_i560.ApiClient>(() => registerModule.apiClient);
     gh.lazySingleton<_i1050.ApiService>(() => registerModule.apiService);
-    gh.lazySingleton<_i11.SendUseCase>(() => registerModule.sendUseCase);
-    gh.lazySingleton<_i1068.VerifyUseCase>(() => registerModule.verifyUseCase);
     gh.lazySingleton<_i265.OTPBloc>(() => registerModule.otpBloc);
     gh.lazySingleton<_i493.PreferenceBloc>(() => registerModule.preferenceBloc);
     gh.lazySingleton<_i995.SharedPreferencesService>(
         () => _i995.SharedPreferencesService(gh<_i460.SharedPreferences>()));
     gh.lazySingleton<_i819.OtpRepository>(
         () => _i1050.ApiService(apiClient: gh<_i560.ApiClient>()));
+    gh.factory<_i11.SendUseCase>(
+        () => _i11.SendUseCase(otpRepository: gh<_i819.OtpRepository>()));
+    gh.factory<_i1068.VerifyUseCase>(
+        () => _i1068.VerifyUseCase(otpRepository: gh<_i819.OtpRepository>()));
     return this;
   }
 }

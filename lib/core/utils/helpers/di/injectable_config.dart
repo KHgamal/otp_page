@@ -47,12 +47,6 @@ abstract class RegisterModule {
   @lazySingleton
   ApiService get apiService => ApiService(apiClient: apiClient);
 
-  // data sources
-  @lazySingleton
-  SendUseCase get sendUseCase=> SendUseCase(otpRepository:apiService);
-  @lazySingleton
-  VerifyUseCase get verifyUseCase=> VerifyUseCase(otpRepository:apiService);
-
   //blocs
   @lazySingleton
   OTPBloc get otpBloc => OTPBloc(

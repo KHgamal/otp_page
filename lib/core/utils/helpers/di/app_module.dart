@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:otp_page/core/utils/helpers/di/injectable_config.dart';
+import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart';
 import 'package:otp_page/features/otp/ui/controller/bloc/otp/otp_bloc.dart';
 
 import 'package:otp_page/features/profile/data/models/profile.dart';
 
+import '../../../../features/otp/domain/usecase/send_use_case.dart';
 import '../../../../features/otp/ui/controller/bloc/preference/preference_bloc.dart';
 import '../shared_preferences_service.dart';
 
@@ -13,6 +15,8 @@ import '../shared_preferences_service.dart';
  final language= prefsService.getLocale();
  OTPBloc otpBloc= getIt<OTPBloc>();
 PreferenceBloc preferenceBloc=getIt<PreferenceBloc>();
+final sendUseCase = getIt<SendUseCase>();
+final verifyUseCase = getIt<VerifyUseCase>();
 
   final logInterceptor = LogInterceptor(
   request: true,
