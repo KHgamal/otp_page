@@ -1,17 +1,16 @@
-
-import 'package:injectable/injectable.dart';
 import 'package:otp_page/features/otp/data/models/models.dart';
-import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart';
+import 'package:otp_page/features/otp/domain/usecase/verify_otp_parameters.dart';
 import 'package:otp_page/features/profile/data/models/response.dart';
 
 import '../../domain/repository/repository.dart';
-import '../../domain/usecase/send_use_case.dart';
+import '../../domain/usecase/send_otp_parameters.dart';
 import 'api_client.dart';
-@LazySingleton(as: OtpRepository)
-class ApiService implements OtpRepository  {
+import 'package:injectable/injectable.dart';
+@injectable
+class ApiServiceRepository implements OtpRepository  {
   final ApiClient apiClient;
 
-  ApiService({required this.apiClient});
+  ApiServiceRepository({required this.apiClient});
 
   @override
   Future<ApiResponse> sendOtp(SendOTPParameters parameters) async {

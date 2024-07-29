@@ -3,15 +3,9 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:otp_page/core/utils/helpers/di/app_module.dart';
 import 'package:otp_page/core/utils/helpers/di/injectable_config.config.dart';
-import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../features/otp/data/services/api_client.dart';
-import '../../../../features/otp/data/services/api_service.dart';
-import '../../../../features/otp/domain/usecase/send_use_case.dart';
-import '../../../../features/otp/ui/controller/bloc/otp/otp_bloc.dart';
-import '../../../../features/otp/ui/controller/bloc/preference/preference_bloc.dart';
-
 
 GetIt getIt = GetIt.instance;
 
@@ -25,7 +19,7 @@ abstract class RegisterModule {
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
   
   //dio
-  @lazySingleton
+  @singleton
   Dio get provideDio {
     final Dio dioInstance=Dio(BaseOptions(
           headers: {
@@ -40,21 +34,8 @@ abstract class RegisterModule {
   }
 
   // data source
-  @lazySingleton
+  @singleton
   ApiClient get apiClient => ApiClient(provideDio);
 
-  // repository
-  @lazySingleton
-  ApiService get apiService => ApiService(apiClient: apiClient);
-
-  //blocs
-  @lazySingleton
-  OTPBloc get otpBloc => OTPBloc(
-    sendUseCase: sendUseCase,
-    verifyUseCase: verifyUseCase,
-  );
-  @lazySingleton
-  PreferenceBloc get preferenceBloc => PreferenceBloc();
-  
 }
 

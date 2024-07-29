@@ -3,7 +3,8 @@ import '../../../../../../core/utils/helpers/di/injectable_config.dart';
 import '../../../../../../core/utils/helpers/shared_preferences_service.dart';
 import 'preference_event.dart';
 import 'preference_state.dart';
-
+import 'package:injectable/injectable.dart';
+@injectable
 class PreferenceBloc extends Bloc<PreferenceEvent, PreferenceState> {
   final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   PreferenceBloc()

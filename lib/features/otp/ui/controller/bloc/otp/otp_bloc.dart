@@ -10,9 +10,12 @@ import 'package:otp_page/features/profile/data/models/profile.dart';
 
 import '../../../../../../core/utils/helpers/di/injectable_config.dart';
 import '../../../../../../core/utils/helpers/shared_preferences_service.dart';
+import '../../../../domain/usecase/send_otp_parameters.dart';
+import '../../../../domain/usecase/verify_otp_parameters.dart';
 import 'otp_event.dart';
 import 'otp_state.dart';
-
+import 'package:injectable/injectable.dart';
+@injectable
 class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final SharedPreferencesService prefsService = getIt<SharedPreferencesService>();
   late Profile dataList ;
@@ -20,10 +23,10 @@ class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
-   final SendUseCase sendUseCase;
-  final VerifyUseCase verifyUseCase;
+ final sendUseCase = getIt<SendUseCase>();
+final verifyUseCase = getIt<VerifyUseCase>();
 
-OTPBloc({required this.sendUseCase, required this.verifyUseCase}) : super(const OTPState.initial()) {
+OTPBloc() : super(const OTPState.initial()) {
     on<SendOTP>(_onSendOTP);
     on<VerifyOTP>(_onVerifyOTP);
     on<StartResendTimer>(_onStartResendTimer);
