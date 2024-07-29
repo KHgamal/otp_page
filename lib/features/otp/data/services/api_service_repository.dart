@@ -6,7 +6,7 @@ import '../../domain/repository/repository.dart';
 import '../../domain/usecase/send_otp_parameters.dart';
 import 'api_client.dart';
 import 'package:injectable/injectable.dart';
-@injectable
+@Injectable(as: OtpRepository )
 class ApiServiceRepository implements OtpRepository  {
   final ApiClient apiClient;
 

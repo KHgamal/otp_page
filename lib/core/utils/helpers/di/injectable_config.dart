@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../features/otp/data/services/api_client.dart';
 
+
 GetIt getIt = GetIt.instance;
 
 @InjectableInit()
@@ -19,7 +20,7 @@ abstract class RegisterModule {
   Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
   
   //dio
-  @singleton
+  @lazySingleton
   Dio get provideDio {
     final Dio dioInstance=Dio(BaseOptions(
           headers: {
@@ -34,8 +35,8 @@ abstract class RegisterModule {
   }
 
   // data source
-  @singleton
+  @lazySingleton
   ApiClient get apiClient => ApiClient(provideDio);
-
+  
 }
 

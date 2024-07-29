@@ -12,7 +12,7 @@ import 'core/utils/helpers/di/injectable_config.dart';
 
 void main() async {
  WidgetsFlutterBinding.ensureInitialized(); 
-  configureDependencies(); 
+  configureDependencies();
   runApp(const MyApp());
 }
 
