@@ -45,11 +45,10 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefs,
       preResolve: true,
     );
-    gh.factory<_i265.OTPBloc>(() => _i265.OTPBloc());
     gh.factory<_i493.PreferenceBloc>(() => _i493.PreferenceBloc());
-    gh.lazySingleton<_i361.Dio>(() => registerModule.provideDio);
-    gh.lazySingleton<_i560.ApiClient>(() => registerModule.apiClient);
-    gh.lazySingleton<_i995.SharedPreferencesService>(
+    gh.singleton<_i361.Dio>(() => registerModule.provideDio);
+    gh.singleton<_i560.ApiClient>(() => registerModule.apiClient);
+    gh.factory<_i995.SharedPreferencesService>(
         () => _i995.SharedPreferencesService(gh<_i460.SharedPreferences>()));
     gh.factory<_i819.OtpRepository>(
         () => _i438.ApiServiceRepository(apiClient: gh<_i560.ApiClient>()));
@@ -57,6 +56,10 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i11.SendUseCase(otpRepository: gh<_i819.OtpRepository>()));
     gh.factory<_i1068.VerifyUseCase>(
         () => _i1068.VerifyUseCase(otpRepository: gh<_i819.OtpRepository>()));
+    gh.factory<_i265.OTPBloc>(() => _i265.OTPBloc(
+          gh<_i11.SendUseCase>(),
+          gh<_i1068.VerifyUseCase>(),
+        ));
     return this;
   }
 }

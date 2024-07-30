@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+
 import 'package:otp_page/features/otp/domain/repository/repository.dart';
 import 'package:otp_page/features/otp/domain/usecase/verify_otp_parameters.dart';
 import 'package:otp_page/features/profile/domain/entity.dart';

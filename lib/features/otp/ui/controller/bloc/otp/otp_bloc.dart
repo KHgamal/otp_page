@@ -23,10 +23,10 @@ class OTPBloc extends Bloc<OTPEvent, OTPState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Timer? _resendTimer;
   bool _canResend = true;
- final sendUseCase = getIt<SendUseCase>();
-final verifyUseCase = getIt<VerifyUseCase>();
+ final SendUseCase sendUseCase;
+final VerifyUseCase verifyUseCase;
 
-OTPBloc() : super(const OTPState.initial()) {
+OTPBloc(this.sendUseCase, this.verifyUseCase) : super(const OTPState.initial()) {
     on<SendOTP>(_onSendOTP);
     on<VerifyOTP>(_onVerifyOTP);
     on<StartResendTimer>(_onStartResendTimer);
