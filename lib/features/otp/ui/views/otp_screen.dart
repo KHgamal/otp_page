@@ -5,6 +5,8 @@ import 'package:otp_page/features/otp/ui/widgets/otp.dart';
 
 import '../../../../core/common/styles/app_colors.dart';
 import '../../../../core/utils/helpers/di/app_module.dart';
+import '../../../../core/utils/helpers/di/injectable_config.dart';
+import '../../../../core/utils/helpers/firebase_messaging_service.dart';
 import '../../../../generated/l10n.dart';
 
 import '../controller/bloc/otp/otp_event.dart';
@@ -12,8 +14,22 @@ import '../widgets/custom_button.dart';
 import '../widgets/preference_section.dart';
 import '../widgets/resend_bloc.dart';
 
-class OtpScreen extends StatelessWidget {
+class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
+
+  @override
+  State<OtpScreen> createState() => _OtpScreenState();
+}
+
+class _OtpScreenState extends State<OtpScreen> {
+ late FirebaseMessagingService _firebaseMessagingService;
+
+  @override
+  void initState() {
+    super.initState();
+    _firebaseMessagingService = getIt<FirebaseMessagingService>();
+    _firebaseMessagingService.initialize();
+  }
 
   @override
   Widget build(BuildContext context) {

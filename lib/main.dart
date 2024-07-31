@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,10 +11,14 @@ import 'core/common/styles/gallery_theme.dart';
 import 'core/navigation/app_router.dart';
 import 'core/utils/helpers/di/app_module.dart';
 import 'core/utils/helpers/di/injectable_config.dart';
+import 'core/utils/helpers/firebase_messaging_service.dart';
 
 void main() async {
+   
  WidgetsFlutterBinding.ensureInitialized(); 
+ await Firebase.initializeApp();
  await configureDependencies();
+ FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 
