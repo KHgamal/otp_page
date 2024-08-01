@@ -97,10 +97,10 @@ OTPBloc(this.sendUseCase, this.verifyUseCase) : super(const OTPState.initial()) 
     });
   }
 
-  @override
+/*   @override
   Future<void> close() {
     otpController.dispose();
     _resendTimer?.cancel();
     return super.close();
-  }
+  } */
 }

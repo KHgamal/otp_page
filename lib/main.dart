@@ -3,6 +3,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:otp_page/generated/l10n.dart';
 import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_bloc.dart';
 import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_state.dart';
@@ -22,9 +23,26 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
  const MyApp({super.key,});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+   late FirebaseMessagingService _firebaseMessagingService;
+   @override
+  void initState() {
+    super.initState();
+        _firebaseMessagingService = getIt<FirebaseMessagingService>();
+    _firebaseMessagingService.initialize();
+    FirebaseMessaging.instance.getInitialMessage().then((RemoteMessage? message) {
+      if (message != null) {
+GoRouter.of(navigatorKey.currentContext!).go("/specific_screen"); 
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return
@@ -32,7 +50,7 @@ class MyApp extends StatelessWidget {
       child: BlocBuilder<PreferenceBloc, PreferenceState>(
         builder: (context, state) {
             return MaterialApp.router(
-              routerConfig: router,
+              routerConfig: router,    
               localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,

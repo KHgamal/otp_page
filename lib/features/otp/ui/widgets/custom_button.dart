@@ -16,8 +16,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return  BlocListener<OTPBloc, OTPState>(
+  return  BlocListener<OTPBloc, OTPState>(
       listener: (context, state) {
         state.whenOrNull(verified: ()=> context.pushReplacement('/profile')); 
       },
