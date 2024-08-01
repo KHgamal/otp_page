@@ -37,6 +37,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
         _firebaseMessagingService = getIt<FirebaseMessagingService>();
     _firebaseMessagingService.initialize();
+    //closed notification
     FirebaseMessaging.instance.getInitialMessage().then((RemoteMessage? message) {
       if (message != null) {
 GoRouter.of(navigatorKey.currentContext!).go("/specific_screen"); 

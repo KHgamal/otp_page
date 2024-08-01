@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/otp/ui/views/otp_screen.dart';
 import '../../features/profile/UI/views/get_notified.dart';
+import '../../features/profile/UI/views/map_screen.dart';
 import '../../features/profile/UI/views/profile_view.dart';
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final GoRouter router = GoRouter(
@@ -23,5 +24,9 @@ final GoRouter router = GoRouter(
     GoRoute(
           path: '/specific_screen',
           builder: (context, state) =>const SpecificScreen(),
+        ),
+         GoRoute(
+          path: '/specific_screen',
+          builder: (context, state) =>const MapScreen(),
         ),
   ],);
