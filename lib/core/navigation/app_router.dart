@@ -25,8 +25,4 @@ final GoRouter router = GoRouter(
           path: '/specific_screen',
           builder: (context, state) =>const SpecificScreen(),
         ),
-         GoRoute(
-          path: '/specific_screen',
-          builder: (context, state) =>const MapScreen(),
-        ),
   ],);
