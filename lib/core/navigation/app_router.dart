@@ -8,7 +8,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/',
       builder: ( context, GoRouterState state) {
-        return const OtpScreen();
+        return const MapScreen();
       },),
          GoRoute(
           path: '/profile',
