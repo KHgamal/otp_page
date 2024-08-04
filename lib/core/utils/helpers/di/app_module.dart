@@ -9,9 +9,11 @@ import 'package:otp_page/features/profile/data/models/profile.dart';
 
 
 import '../../../../features/otp/ui/controller/bloc/preference/preference_bloc.dart';
+import '../../../../features/profile/UI/controller/bloc/map_bloc.dart';
 import '../shared_preferences_service.dart';
 
- OTPBloc otpBloc= getIt<OTPBloc>();
+OTPBloc otpBloc= getIt<OTPBloc>();
+MapsBloc mapsBloc= getIt<MapsBloc>();
 PreferenceBloc preferenceBloc=getIt<PreferenceBloc>();
 
 Profile fetchProfileInfo(){

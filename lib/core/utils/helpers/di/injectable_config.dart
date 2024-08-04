@@ -6,6 +6,7 @@ import 'package:otp_page/core/utils/helpers/shared_preferences_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../features/otp/data/services/api_client.dart';
+import '../../../../features/profile/data/services/api_service.dart';
 
 
 GetIt getIt = GetIt.instance;
@@ -38,8 +39,12 @@ abstract class RegisterModule {
     return dio;
   }
 
-  // data source
+  // otp data source
   @singleton
   ApiClient get apiClient => ApiClient(provideDio);
+
+  // map data source
+  @singleton
+  ApiService get apiService => ApiService(provideDio);
 }
 

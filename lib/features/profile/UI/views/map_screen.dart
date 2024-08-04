@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import 'package:otp_page/core/utils/helpers/di/app_module.dart';
+import 'package:otp_page/features/profile/UI/widgets/map_widget.dart';
+import 'package:otp_page/features/profile/UI/widgets/search_field.dart';
 import '../../../../core/utils/helpers/get_current_location.dart';
 
 class MapScreen extends StatefulWidget {
@@ -14,56 +17,44 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-    @override
-  initState()  {
+  @override
+  initState() {
     super.initState();
     getMyCurrentLocation();
   }
 
   Future<void> getMyCurrentLocation() async {
-    position = await LocationHelper.handleLocationPermission(context).whenComplete(() {
+    position =
+        await LocationHelper.handleLocationPermission(context).whenComplete(() {
       setState(() {});
     });
   }
-static Position? position;
- final CameraPosition myCurrentLocationCameraPosition = CameraPosition(
+
+  static Position? position;
+  final CameraPosition myCurrentLocationCameraPosition = const CameraPosition(
     bearing: 0.0,
     target: LatLng(31.187084851056554, 29.928110526889437),
     tilt: 0.0,
     zoom: 17,
   );
-   GoogleMapController? mapController ;
-   Set<Marker> markers = {};
+
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            GoogleMap(
-      mapType: MapType.normal,
-      myLocationEnabled: true,
-      zoomControlsEnabled: false,
-      myLocationButtonEnabled: false,
-      markers: markers,
-      initialCameraPosition: myCurrentLocationCameraPosition,
-      onMapCreated: (GoogleMapController controller) {
-        mapController=controller;
-      },
-     /*  polylines: placeDirections != null
-          ? {
-              Polyline(
-                polylineId: const PolylineId('my_polyline'),
-                color: Colors.black,
-                width: 2,
-                points: polylinePoints,
-              ),
-            }
-          : {}, */
-    ),
-          ],
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    return BlocProvider(
+      create: (context) => mapsBloc,
+      child: SafeArea(
+        child: Scaffold(
+          body: Stack(
+            children: [
+              MapWidget(myCurrentLocationCameraPosition:myCurrentLocationCameraPosition),
+              SearchField( isPortrait: isPortrait)
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
