@@ -16,4 +16,8 @@ class MapsEvent with _$MapsEvent {
     required LatLng origin,
     required LatLng destination,
   }) = GetDirections;
+  const factory MapsEvent.buildCameraNewPosition() = BuildCameraNewPosition;
+  const factory MapsEvent.buildSearchedPlaceMarker() = BuildSearchedPlaceMarker;
+  const factory MapsEvent.goToMyCurrentLocation() = GoToMyCurrentLocation;
+  const factory MapsEvent.goToMySearchedForLocation() = GoToMySearchedForLocation;
 }

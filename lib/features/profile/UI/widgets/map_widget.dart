@@ -20,7 +20,7 @@ class MapWidget extends StatelessWidget {
       markers:mapsBloc.markers,
       initialCameraPosition: myCurrentLocationCameraPosition,
       onMapCreated: (GoogleMapController controller) {
-            mapsBloc.mapController=controller;
+            mapsBloc.mapController.complete(controller);
           },
       /*  polylines: placeDirections != null
               ? {

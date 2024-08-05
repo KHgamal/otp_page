@@ -23,6 +23,10 @@ mixin _$MapsEvent {
     required TResult Function(String placeId, String sessionToken)
         getPlaceLocation,
     required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +34,10 @@ mixin _$MapsEvent {
     TResult? Function(String place, String sessionToken)? fetchSuggestions,
     TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +45,10 @@ mixin _$MapsEvent {
     TResult Function(String place, String sessionToken)? fetchSuggestions,
     TResult Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +57,14 @@ mixin _$MapsEvent {
     required TResult Function(FetchSuggestions value) fetchSuggestions,
     required TResult Function(GetPlaceLocation value) getPlaceLocation,
     required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +72,11 @@ mixin _$MapsEvent {
     TResult? Function(FetchSuggestions value)? fetchSuggestions,
     TResult? Function(GetPlaceLocation value)? getPlaceLocation,
     TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +84,11 @@ mixin _$MapsEvent {
     TResult Function(FetchSuggestions value)? fetchSuggestions,
     TResult Function(GetPlaceLocation value)? getPlaceLocation,
     TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -161,6 +191,10 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     required TResult Function(String placeId, String sessionToken)
         getPlaceLocation,
     required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
   }) {
     return fetchSuggestions(place, sessionToken);
   }
@@ -171,6 +205,10 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     TResult? Function(String place, String sessionToken)? fetchSuggestions,
     TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
   }) {
     return fetchSuggestions?.call(place, sessionToken);
   }
@@ -181,6 +219,10 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     TResult Function(String place, String sessionToken)? fetchSuggestions,
     TResult Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (fetchSuggestions != null) {
@@ -195,6 +237,14 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     required TResult Function(FetchSuggestions value) fetchSuggestions,
     required TResult Function(GetPlaceLocation value) getPlaceLocation,
     required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
   }) {
     return fetchSuggestions(this);
   }
@@ -205,6 +255,11 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     TResult? Function(FetchSuggestions value)? fetchSuggestions,
     TResult? Function(GetPlaceLocation value)? getPlaceLocation,
     TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
   }) {
     return fetchSuggestions?.call(this);
   }
@@ -215,6 +270,11 @@ class _$FetchSuggestionsImpl implements FetchSuggestions {
     TResult Function(FetchSuggestions value)? fetchSuggestions,
     TResult Function(GetPlaceLocation value)? getPlaceLocation,
     TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (fetchSuggestions != null) {
@@ -316,6 +376,10 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     required TResult Function(String placeId, String sessionToken)
         getPlaceLocation,
     required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
   }) {
     return getPlaceLocation(placeId, sessionToken);
   }
@@ -326,6 +390,10 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     TResult? Function(String place, String sessionToken)? fetchSuggestions,
     TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
   }) {
     return getPlaceLocation?.call(placeId, sessionToken);
   }
@@ -336,6 +404,10 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     TResult Function(String place, String sessionToken)? fetchSuggestions,
     TResult Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (getPlaceLocation != null) {
@@ -350,6 +422,14 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     required TResult Function(FetchSuggestions value) fetchSuggestions,
     required TResult Function(GetPlaceLocation value) getPlaceLocation,
     required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
   }) {
     return getPlaceLocation(this);
   }
@@ -360,6 +440,11 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     TResult? Function(FetchSuggestions value)? fetchSuggestions,
     TResult? Function(GetPlaceLocation value)? getPlaceLocation,
     TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
   }) {
     return getPlaceLocation?.call(this);
   }
@@ -370,6 +455,11 @@ class _$GetPlaceLocationImpl implements GetPlaceLocation {
     TResult Function(FetchSuggestions value)? fetchSuggestions,
     TResult Function(GetPlaceLocation value)? getPlaceLocation,
     TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (getPlaceLocation != null) {
@@ -411,15 +501,15 @@ class __$$GetDirectionsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? origin = freezed,
-    Object? destination = freezed,
+    Object? origin = null,
+    Object? destination = null,
   }) {
     return _then(_$GetDirectionsImpl(
-      origin: freezed == origin
+      origin: null == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      destination: freezed == destination
+      destination: null == destination
           ? _value.destination
           : destination // ignore: cast_nullable_to_non_nullable
               as LatLng,
@@ -447,16 +537,13 @@ class _$GetDirectionsImpl implements GetDirections {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetDirectionsImpl &&
-            const DeepCollectionEquality().equals(other.origin, origin) &&
-            const DeepCollectionEquality()
-                .equals(other.destination, destination));
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.destination, destination) ||
+                other.destination == destination));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(origin),
-      const DeepCollectionEquality().hash(destination));
+  int get hashCode => Object.hash(runtimeType, origin, destination);
 
   @JsonKey(ignore: true)
   @override
@@ -472,6 +559,10 @@ class _$GetDirectionsImpl implements GetDirections {
     required TResult Function(String placeId, String sessionToken)
         getPlaceLocation,
     required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
   }) {
     return getDirections(origin, destination);
   }
@@ -482,6 +573,10 @@ class _$GetDirectionsImpl implements GetDirections {
     TResult? Function(String place, String sessionToken)? fetchSuggestions,
     TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
   }) {
     return getDirections?.call(origin, destination);
   }
@@ -492,6 +587,10 @@ class _$GetDirectionsImpl implements GetDirections {
     TResult Function(String place, String sessionToken)? fetchSuggestions,
     TResult Function(String placeId, String sessionToken)? getPlaceLocation,
     TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (getDirections != null) {
@@ -506,6 +605,14 @@ class _$GetDirectionsImpl implements GetDirections {
     required TResult Function(FetchSuggestions value) fetchSuggestions,
     required TResult Function(GetPlaceLocation value) getPlaceLocation,
     required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
   }) {
     return getDirections(this);
   }
@@ -516,6 +623,11 @@ class _$GetDirectionsImpl implements GetDirections {
     TResult? Function(FetchSuggestions value)? fetchSuggestions,
     TResult? Function(GetPlaceLocation value)? getPlaceLocation,
     TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
   }) {
     return getDirections?.call(this);
   }
@@ -526,6 +638,11 @@ class _$GetDirectionsImpl implements GetDirections {
     TResult Function(FetchSuggestions value)? fetchSuggestions,
     TResult Function(GetPlaceLocation value)? getPlaceLocation,
     TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
     required TResult orElse(),
   }) {
     if (getDirections != null) {
@@ -548,11 +665,586 @@ abstract class GetDirections implements MapsEvent {
 }
 
 /// @nodoc
+abstract class _$$BuildCameraNewPositionImplCopyWith<$Res> {
+  factory _$$BuildCameraNewPositionImplCopyWith(
+          _$BuildCameraNewPositionImpl value,
+          $Res Function(_$BuildCameraNewPositionImpl) then) =
+      __$$BuildCameraNewPositionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BuildCameraNewPositionImplCopyWithImpl<$Res>
+    extends _$MapsEventCopyWithImpl<$Res, _$BuildCameraNewPositionImpl>
+    implements _$$BuildCameraNewPositionImplCopyWith<$Res> {
+  __$$BuildCameraNewPositionImplCopyWithImpl(
+      _$BuildCameraNewPositionImpl _value,
+      $Res Function(_$BuildCameraNewPositionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BuildCameraNewPositionImpl implements BuildCameraNewPosition {
+  const _$BuildCameraNewPositionImpl();
+
+  @override
+  String toString() {
+    return 'MapsEvent.buildCameraNewPosition()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BuildCameraNewPositionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String place, String sessionToken)
+        fetchSuggestions,
+    required TResult Function(String placeId, String sessionToken)
+        getPlaceLocation,
+    required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
+  }) {
+    return buildCameraNewPosition();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String place, String sessionToken)? fetchSuggestions,
+    TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
+  }) {
+    return buildCameraNewPosition?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String place, String sessionToken)? fetchSuggestions,
+    TResult Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (buildCameraNewPosition != null) {
+      return buildCameraNewPosition();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchSuggestions value) fetchSuggestions,
+    required TResult Function(GetPlaceLocation value) getPlaceLocation,
+    required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
+  }) {
+    return buildCameraNewPosition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchSuggestions value)? fetchSuggestions,
+    TResult? Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+  }) {
+    return buildCameraNewPosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchSuggestions value)? fetchSuggestions,
+    TResult Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (buildCameraNewPosition != null) {
+      return buildCameraNewPosition(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BuildCameraNewPosition implements MapsEvent {
+  const factory BuildCameraNewPosition() = _$BuildCameraNewPositionImpl;
+}
+
+/// @nodoc
+abstract class _$$BuildSearchedPlaceMarkerImplCopyWith<$Res> {
+  factory _$$BuildSearchedPlaceMarkerImplCopyWith(
+          _$BuildSearchedPlaceMarkerImpl value,
+          $Res Function(_$BuildSearchedPlaceMarkerImpl) then) =
+      __$$BuildSearchedPlaceMarkerImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BuildSearchedPlaceMarkerImplCopyWithImpl<$Res>
+    extends _$MapsEventCopyWithImpl<$Res, _$BuildSearchedPlaceMarkerImpl>
+    implements _$$BuildSearchedPlaceMarkerImplCopyWith<$Res> {
+  __$$BuildSearchedPlaceMarkerImplCopyWithImpl(
+      _$BuildSearchedPlaceMarkerImpl _value,
+      $Res Function(_$BuildSearchedPlaceMarkerImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BuildSearchedPlaceMarkerImpl implements BuildSearchedPlaceMarker {
+  const _$BuildSearchedPlaceMarkerImpl();
+
+  @override
+  String toString() {
+    return 'MapsEvent.buildSearchedPlaceMarker()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BuildSearchedPlaceMarkerImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String place, String sessionToken)
+        fetchSuggestions,
+    required TResult Function(String placeId, String sessionToken)
+        getPlaceLocation,
+    required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
+  }) {
+    return buildSearchedPlaceMarker();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String place, String sessionToken)? fetchSuggestions,
+    TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
+  }) {
+    return buildSearchedPlaceMarker?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String place, String sessionToken)? fetchSuggestions,
+    TResult Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (buildSearchedPlaceMarker != null) {
+      return buildSearchedPlaceMarker();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchSuggestions value) fetchSuggestions,
+    required TResult Function(GetPlaceLocation value) getPlaceLocation,
+    required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
+  }) {
+    return buildSearchedPlaceMarker(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchSuggestions value)? fetchSuggestions,
+    TResult? Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+  }) {
+    return buildSearchedPlaceMarker?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchSuggestions value)? fetchSuggestions,
+    TResult Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (buildSearchedPlaceMarker != null) {
+      return buildSearchedPlaceMarker(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BuildSearchedPlaceMarker implements MapsEvent {
+  const factory BuildSearchedPlaceMarker() = _$BuildSearchedPlaceMarkerImpl;
+}
+
+/// @nodoc
+abstract class _$$GoToMyCurrentLocationImplCopyWith<$Res> {
+  factory _$$GoToMyCurrentLocationImplCopyWith(
+          _$GoToMyCurrentLocationImpl value,
+          $Res Function(_$GoToMyCurrentLocationImpl) then) =
+      __$$GoToMyCurrentLocationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoToMyCurrentLocationImplCopyWithImpl<$Res>
+    extends _$MapsEventCopyWithImpl<$Res, _$GoToMyCurrentLocationImpl>
+    implements _$$GoToMyCurrentLocationImplCopyWith<$Res> {
+  __$$GoToMyCurrentLocationImplCopyWithImpl(_$GoToMyCurrentLocationImpl _value,
+      $Res Function(_$GoToMyCurrentLocationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoToMyCurrentLocationImpl implements GoToMyCurrentLocation {
+  const _$GoToMyCurrentLocationImpl();
+
+  @override
+  String toString() {
+    return 'MapsEvent.goToMyCurrentLocation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoToMyCurrentLocationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String place, String sessionToken)
+        fetchSuggestions,
+    required TResult Function(String placeId, String sessionToken)
+        getPlaceLocation,
+    required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
+  }) {
+    return goToMyCurrentLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String place, String sessionToken)? fetchSuggestions,
+    TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
+  }) {
+    return goToMyCurrentLocation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String place, String sessionToken)? fetchSuggestions,
+    TResult Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (goToMyCurrentLocation != null) {
+      return goToMyCurrentLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchSuggestions value) fetchSuggestions,
+    required TResult Function(GetPlaceLocation value) getPlaceLocation,
+    required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
+  }) {
+    return goToMyCurrentLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchSuggestions value)? fetchSuggestions,
+    TResult? Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+  }) {
+    return goToMyCurrentLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchSuggestions value)? fetchSuggestions,
+    TResult Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (goToMyCurrentLocation != null) {
+      return goToMyCurrentLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoToMyCurrentLocation implements MapsEvent {
+  const factory GoToMyCurrentLocation() = _$GoToMyCurrentLocationImpl;
+}
+
+/// @nodoc
+abstract class _$$GoToMySearchedForLocationImplCopyWith<$Res> {
+  factory _$$GoToMySearchedForLocationImplCopyWith(
+          _$GoToMySearchedForLocationImpl value,
+          $Res Function(_$GoToMySearchedForLocationImpl) then) =
+      __$$GoToMySearchedForLocationImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GoToMySearchedForLocationImplCopyWithImpl<$Res>
+    extends _$MapsEventCopyWithImpl<$Res, _$GoToMySearchedForLocationImpl>
+    implements _$$GoToMySearchedForLocationImplCopyWith<$Res> {
+  __$$GoToMySearchedForLocationImplCopyWithImpl(
+      _$GoToMySearchedForLocationImpl _value,
+      $Res Function(_$GoToMySearchedForLocationImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GoToMySearchedForLocationImpl implements GoToMySearchedForLocation {
+  const _$GoToMySearchedForLocationImpl();
+
+  @override
+  String toString() {
+    return 'MapsEvent.goToMySearchedForLocation()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GoToMySearchedForLocationImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String place, String sessionToken)
+        fetchSuggestions,
+    required TResult Function(String placeId, String sessionToken)
+        getPlaceLocation,
+    required TResult Function(LatLng origin, LatLng destination) getDirections,
+    required TResult Function() buildCameraNewPosition,
+    required TResult Function() buildSearchedPlaceMarker,
+    required TResult Function() goToMyCurrentLocation,
+    required TResult Function() goToMySearchedForLocation,
+  }) {
+    return goToMySearchedForLocation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String place, String sessionToken)? fetchSuggestions,
+    TResult? Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult? Function(LatLng origin, LatLng destination)? getDirections,
+    TResult? Function()? buildCameraNewPosition,
+    TResult? Function()? buildSearchedPlaceMarker,
+    TResult? Function()? goToMyCurrentLocation,
+    TResult? Function()? goToMySearchedForLocation,
+  }) {
+    return goToMySearchedForLocation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String place, String sessionToken)? fetchSuggestions,
+    TResult Function(String placeId, String sessionToken)? getPlaceLocation,
+    TResult Function(LatLng origin, LatLng destination)? getDirections,
+    TResult Function()? buildCameraNewPosition,
+    TResult Function()? buildSearchedPlaceMarker,
+    TResult Function()? goToMyCurrentLocation,
+    TResult Function()? goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (goToMySearchedForLocation != null) {
+      return goToMySearchedForLocation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FetchSuggestions value) fetchSuggestions,
+    required TResult Function(GetPlaceLocation value) getPlaceLocation,
+    required TResult Function(GetDirections value) getDirections,
+    required TResult Function(BuildCameraNewPosition value)
+        buildCameraNewPosition,
+    required TResult Function(BuildSearchedPlaceMarker value)
+        buildSearchedPlaceMarker,
+    required TResult Function(GoToMyCurrentLocation value)
+        goToMyCurrentLocation,
+    required TResult Function(GoToMySearchedForLocation value)
+        goToMySearchedForLocation,
+  }) {
+    return goToMySearchedForLocation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FetchSuggestions value)? fetchSuggestions,
+    TResult? Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult? Function(GetDirections value)? getDirections,
+    TResult? Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult? Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult? Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult? Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+  }) {
+    return goToMySearchedForLocation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(FetchSuggestions value)? fetchSuggestions,
+    TResult Function(GetPlaceLocation value)? getPlaceLocation,
+    TResult Function(GetDirections value)? getDirections,
+    TResult Function(BuildCameraNewPosition value)? buildCameraNewPosition,
+    TResult Function(BuildSearchedPlaceMarker value)? buildSearchedPlaceMarker,
+    TResult Function(GoToMyCurrentLocation value)? goToMyCurrentLocation,
+    TResult Function(GoToMySearchedForLocation value)?
+        goToMySearchedForLocation,
+    required TResult orElse(),
+  }) {
+    if (goToMySearchedForLocation != null) {
+      return goToMySearchedForLocation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoToMySearchedForLocation implements MapsEvent {
+  const factory GoToMySearchedForLocation() = _$GoToMySearchedForLocationImpl;
+}
+
+/// @nodoc
 mixin _$MapsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -564,6 +1256,10 @@ mixin _$MapsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -574,6 +1270,10 @@ mixin _$MapsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -585,6 +1285,12 @@ mixin _$MapsState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -595,6 +1301,10 @@ mixin _$MapsState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -605,6 +1315,10 @@ mixin _$MapsState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -671,6 +1385,10 @@ class _$InitialImpl implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -685,6 +1403,10 @@ class _$InitialImpl implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -698,6 +1420,10 @@ class _$InitialImpl implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -715,6 +1441,12 @@ class _$InitialImpl implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -728,6 +1460,10 @@ class _$InitialImpl implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -741,6 +1477,10 @@ class _$InitialImpl implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -798,6 +1538,10 @@ class _$LoadingImpl implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -812,6 +1556,10 @@ class _$LoadingImpl implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -825,6 +1573,10 @@ class _$LoadingImpl implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -842,6 +1594,12 @@ class _$LoadingImpl implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -855,6 +1613,10 @@ class _$LoadingImpl implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -868,6 +1630,10 @@ class _$LoadingImpl implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -883,6 +1649,687 @@ class _$LoadingImpl implements Loading {
 
 abstract class Loading implements MapsState {
   const factory Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$CameraPositionUpdatedImplCopyWith<$Res> {
+  factory _$$CameraPositionUpdatedImplCopyWith(
+          _$CameraPositionUpdatedImpl value,
+          $Res Function(_$CameraPositionUpdatedImpl) then) =
+      __$$CameraPositionUpdatedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({CameraPosition position});
+}
+
+/// @nodoc
+class __$$CameraPositionUpdatedImplCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res, _$CameraPositionUpdatedImpl>
+    implements _$$CameraPositionUpdatedImplCopyWith<$Res> {
+  __$$CameraPositionUpdatedImplCopyWithImpl(_$CameraPositionUpdatedImpl _value,
+      $Res Function(_$CameraPositionUpdatedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? position = null,
+  }) {
+    return _then(_$CameraPositionUpdatedImpl(
+      null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as CameraPosition,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CameraPositionUpdatedImpl implements CameraPositionUpdated {
+  const _$CameraPositionUpdatedImpl(this.position);
+
+  @override
+  final CameraPosition position;
+
+  @override
+  String toString() {
+    return 'MapsState.cameraPositionUpdated(position: $position)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CameraPositionUpdatedImpl &&
+            (identical(other.position, position) ||
+                other.position == position));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, position);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CameraPositionUpdatedImplCopyWith<_$CameraPositionUpdatedImpl>
+      get copyWith => __$$CameraPositionUpdatedImplCopyWithImpl<
+          _$CameraPositionUpdatedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
+    required TResult Function(List<PlaceSuggestion> suggestions)
+        suggestionsLoaded,
+    required TResult Function(Place place) placeLocationLoaded,
+    required TResult Function(PlaceDirections directions) directionsLoaded,
+    required TResult Function(String message) error,
+  }) {
+    return cameraPositionUpdated(position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
+    TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult? Function(Place place)? placeLocationLoaded,
+    TResult? Function(PlaceDirections directions)? directionsLoaded,
+    TResult? Function(String message)? error,
+  }) {
+    return cameraPositionUpdated?.call(position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
+    TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult Function(Place place)? placeLocationLoaded,
+    TResult Function(PlaceDirections directions)? directionsLoaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (cameraPositionUpdated != null) {
+      return cameraPositionUpdated(position);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
+    required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
+    required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
+    required TResult Function(DirectionsLoaded value) directionsLoaded,
+    required TResult Function(Error value) error,
+  }) {
+    return cameraPositionUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult? Function(DirectionsLoaded value)? directionsLoaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return cameraPositionUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult Function(DirectionsLoaded value)? directionsLoaded,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (cameraPositionUpdated != null) {
+      return cameraPositionUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CameraPositionUpdated implements MapsState {
+  const factory CameraPositionUpdated(final CameraPosition position) =
+      _$CameraPositionUpdatedImpl;
+
+  CameraPosition get position;
+  @JsonKey(ignore: true)
+  _$$CameraPositionUpdatedImplCopyWith<_$CameraPositionUpdatedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MarkerBuiltImplCopyWith<$Res> {
+  factory _$$MarkerBuiltImplCopyWith(
+          _$MarkerBuiltImpl value, $Res Function(_$MarkerBuiltImpl) then) =
+      __$$MarkerBuiltImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Marker marker});
+}
+
+/// @nodoc
+class __$$MarkerBuiltImplCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res, _$MarkerBuiltImpl>
+    implements _$$MarkerBuiltImplCopyWith<$Res> {
+  __$$MarkerBuiltImplCopyWithImpl(
+      _$MarkerBuiltImpl _value, $Res Function(_$MarkerBuiltImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? marker = null,
+  }) {
+    return _then(_$MarkerBuiltImpl(
+      null == marker
+          ? _value.marker
+          : marker // ignore: cast_nullable_to_non_nullable
+              as Marker,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MarkerBuiltImpl implements MarkerBuilt {
+  const _$MarkerBuiltImpl(this.marker);
+
+  @override
+  final Marker marker;
+
+  @override
+  String toString() {
+    return 'MapsState.markerBuilt(marker: $marker)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MarkerBuiltImpl &&
+            (identical(other.marker, marker) || other.marker == marker));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, marker);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MarkerBuiltImplCopyWith<_$MarkerBuiltImpl> get copyWith =>
+      __$$MarkerBuiltImplCopyWithImpl<_$MarkerBuiltImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
+    required TResult Function(List<PlaceSuggestion> suggestions)
+        suggestionsLoaded,
+    required TResult Function(Place place) placeLocationLoaded,
+    required TResult Function(PlaceDirections directions) directionsLoaded,
+    required TResult Function(String message) error,
+  }) {
+    return markerBuilt(marker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
+    TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult? Function(Place place)? placeLocationLoaded,
+    TResult? Function(PlaceDirections directions)? directionsLoaded,
+    TResult? Function(String message)? error,
+  }) {
+    return markerBuilt?.call(marker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
+    TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult Function(Place place)? placeLocationLoaded,
+    TResult Function(PlaceDirections directions)? directionsLoaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (markerBuilt != null) {
+      return markerBuilt(marker);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
+    required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
+    required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
+    required TResult Function(DirectionsLoaded value) directionsLoaded,
+    required TResult Function(Error value) error,
+  }) {
+    return markerBuilt(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult? Function(DirectionsLoaded value)? directionsLoaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return markerBuilt?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult Function(DirectionsLoaded value)? directionsLoaded,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (markerBuilt != null) {
+      return markerBuilt(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MarkerBuilt implements MapsState {
+  const factory MarkerBuilt(final Marker marker) = _$MarkerBuiltImpl;
+
+  Marker get marker;
+  @JsonKey(ignore: true)
+  _$$MarkerBuiltImplCopyWith<_$MarkerBuiltImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CurrentLocationMovedImplCopyWith<$Res> {
+  factory _$$CurrentLocationMovedImplCopyWith(_$CurrentLocationMovedImpl value,
+          $Res Function(_$CurrentLocationMovedImpl) then) =
+      __$$CurrentLocationMovedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CurrentLocationMovedImplCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res, _$CurrentLocationMovedImpl>
+    implements _$$CurrentLocationMovedImplCopyWith<$Res> {
+  __$$CurrentLocationMovedImplCopyWithImpl(_$CurrentLocationMovedImpl _value,
+      $Res Function(_$CurrentLocationMovedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CurrentLocationMovedImpl implements CurrentLocationMoved {
+  const _$CurrentLocationMovedImpl();
+
+  @override
+  String toString() {
+    return 'MapsState.currentLocationMoved()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CurrentLocationMovedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
+    required TResult Function(List<PlaceSuggestion> suggestions)
+        suggestionsLoaded,
+    required TResult Function(Place place) placeLocationLoaded,
+    required TResult Function(PlaceDirections directions) directionsLoaded,
+    required TResult Function(String message) error,
+  }) {
+    return currentLocationMoved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
+    TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult? Function(Place place)? placeLocationLoaded,
+    TResult? Function(PlaceDirections directions)? directionsLoaded,
+    TResult? Function(String message)? error,
+  }) {
+    return currentLocationMoved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
+    TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult Function(Place place)? placeLocationLoaded,
+    TResult Function(PlaceDirections directions)? directionsLoaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (currentLocationMoved != null) {
+      return currentLocationMoved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
+    required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
+    required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
+    required TResult Function(DirectionsLoaded value) directionsLoaded,
+    required TResult Function(Error value) error,
+  }) {
+    return currentLocationMoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult? Function(DirectionsLoaded value)? directionsLoaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return currentLocationMoved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult Function(DirectionsLoaded value)? directionsLoaded,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (currentLocationMoved != null) {
+      return currentLocationMoved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CurrentLocationMoved implements MapsState {
+  const factory CurrentLocationMoved() = _$CurrentLocationMovedImpl;
+}
+
+/// @nodoc
+abstract class _$$SearchedLocationMovedImplCopyWith<$Res> {
+  factory _$$SearchedLocationMovedImplCopyWith(
+          _$SearchedLocationMovedImpl value,
+          $Res Function(_$SearchedLocationMovedImpl) then) =
+      __$$SearchedLocationMovedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SearchedLocationMovedImplCopyWithImpl<$Res>
+    extends _$MapsStateCopyWithImpl<$Res, _$SearchedLocationMovedImpl>
+    implements _$$SearchedLocationMovedImplCopyWith<$Res> {
+  __$$SearchedLocationMovedImplCopyWithImpl(_$SearchedLocationMovedImpl _value,
+      $Res Function(_$SearchedLocationMovedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SearchedLocationMovedImpl implements SearchedLocationMoved {
+  const _$SearchedLocationMovedImpl();
+
+  @override
+  String toString() {
+    return 'MapsState.searchedLocationMoved()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchedLocationMovedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
+    required TResult Function(List<PlaceSuggestion> suggestions)
+        suggestionsLoaded,
+    required TResult Function(Place place) placeLocationLoaded,
+    required TResult Function(PlaceDirections directions) directionsLoaded,
+    required TResult Function(String message) error,
+  }) {
+    return searchedLocationMoved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
+    TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult? Function(Place place)? placeLocationLoaded,
+    TResult? Function(PlaceDirections directions)? directionsLoaded,
+    TResult? Function(String message)? error,
+  }) {
+    return searchedLocationMoved?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
+    TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
+    TResult Function(Place place)? placeLocationLoaded,
+    TResult Function(PlaceDirections directions)? directionsLoaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (searchedLocationMoved != null) {
+      return searchedLocationMoved();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
+    required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
+    required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
+    required TResult Function(DirectionsLoaded value) directionsLoaded,
+    required TResult Function(Error value) error,
+  }) {
+    return searchedLocationMoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult? Function(DirectionsLoaded value)? directionsLoaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return searchedLocationMoved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
+    TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
+    TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
+    TResult Function(DirectionsLoaded value)? directionsLoaded,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (searchedLocationMoved != null) {
+      return searchedLocationMoved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchedLocationMoved implements MapsState {
+  const factory SearchedLocationMoved() = _$SearchedLocationMovedImpl;
 }
 
 /// @nodoc
@@ -960,6 +2407,10 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -974,6 +2425,10 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -987,6 +2442,10 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -1004,6 +2463,12 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -1017,6 +2482,10 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -1030,6 +2499,10 @@ class _$SuggestionsLoadedImpl implements SuggestionsLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -1120,6 +2593,10 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -1134,6 +2611,10 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -1147,6 +2628,10 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -1164,6 +2649,12 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -1177,6 +2668,10 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -1190,6 +2685,10 @@ class _$PlaceLocationLoadedImpl implements PlaceLocationLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -1281,6 +2780,10 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -1295,6 +2798,10 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -1308,6 +2815,10 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -1325,6 +2836,12 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -1338,6 +2855,10 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -1351,6 +2872,10 @@ class _$DirectionsLoadedImpl implements DirectionsLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,
@@ -1440,6 +2965,10 @@ class _$ErrorImpl implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(CameraPosition position) cameraPositionUpdated,
+    required TResult Function(Marker marker) markerBuilt,
+    required TResult Function() currentLocationMoved,
+    required TResult Function() searchedLocationMoved,
     required TResult Function(List<PlaceSuggestion> suggestions)
         suggestionsLoaded,
     required TResult Function(Place place) placeLocationLoaded,
@@ -1454,6 +2983,10 @@ class _$ErrorImpl implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(CameraPosition position)? cameraPositionUpdated,
+    TResult? Function(Marker marker)? markerBuilt,
+    TResult? Function()? currentLocationMoved,
+    TResult? Function()? searchedLocationMoved,
     TResult? Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult? Function(Place place)? placeLocationLoaded,
     TResult? Function(PlaceDirections directions)? directionsLoaded,
@@ -1467,6 +3000,10 @@ class _$ErrorImpl implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(CameraPosition position)? cameraPositionUpdated,
+    TResult Function(Marker marker)? markerBuilt,
+    TResult Function()? currentLocationMoved,
+    TResult Function()? searchedLocationMoved,
     TResult Function(List<PlaceSuggestion> suggestions)? suggestionsLoaded,
     TResult Function(Place place)? placeLocationLoaded,
     TResult Function(PlaceDirections directions)? directionsLoaded,
@@ -1484,6 +3021,12 @@ class _$ErrorImpl implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(CameraPositionUpdated value)
+        cameraPositionUpdated,
+    required TResult Function(MarkerBuilt value) markerBuilt,
+    required TResult Function(CurrentLocationMoved value) currentLocationMoved,
+    required TResult Function(SearchedLocationMoved value)
+        searchedLocationMoved,
     required TResult Function(SuggestionsLoaded value) suggestionsLoaded,
     required TResult Function(PlaceLocationLoaded value) placeLocationLoaded,
     required TResult Function(DirectionsLoaded value) directionsLoaded,
@@ -1497,6 +3040,10 @@ class _$ErrorImpl implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
+    TResult? Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult? Function(MarkerBuilt value)? markerBuilt,
+    TResult? Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult? Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult? Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult? Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult? Function(DirectionsLoaded value)? directionsLoaded,
@@ -1510,6 +3057,10 @@ class _$ErrorImpl implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(CameraPositionUpdated value)? cameraPositionUpdated,
+    TResult Function(MarkerBuilt value)? markerBuilt,
+    TResult Function(CurrentLocationMoved value)? currentLocationMoved,
+    TResult Function(SearchedLocationMoved value)? searchedLocationMoved,
     TResult Function(SuggestionsLoaded value)? suggestionsLoaded,
     TResult Function(PlaceLocationLoaded value)? placeLocationLoaded,
     TResult Function(DirectionsLoaded value)? directionsLoaded,

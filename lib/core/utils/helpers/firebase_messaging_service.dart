@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:otp_page/core/utils/helpers/di/injectable_config.dart';
 
-import '../../navigation/app_router.dart';
+import '../../navigation/app_go_router.dart';
 
 @singleton
 class FirebaseMessagingService {

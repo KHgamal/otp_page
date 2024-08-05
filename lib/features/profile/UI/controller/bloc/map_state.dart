@@ -5,6 +5,10 @@ class MapsState with _$MapsState {
   const factory MapsState.initial() = Initial;
 
   const factory MapsState.loading() = Loading;
+  const factory MapsState.cameraPositionUpdated(CameraPosition position) = CameraPositionUpdated;
+  const factory MapsState.markerBuilt(Marker marker) = MarkerBuilt;
+  const factory MapsState.currentLocationMoved() = CurrentLocationMoved;
+  const factory MapsState.searchedLocationMoved() = SearchedLocationMoved;
 
   const factory MapsState.suggestionsLoaded(List<PlaceSuggestion> suggestions) = SuggestionsLoaded;
 

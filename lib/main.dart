@@ -9,7 +9,7 @@ import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_b
 import 'package:otp_page/features/otp/ui/controller/bloc/preference/preference_state.dart';
 
 import 'core/common/styles/gallery_theme.dart';
-import 'core/navigation/app_router.dart';
+import 'core/navigation/app_go_router.dart';
 import 'core/utils/helpers/di/app_module.dart';
 import 'core/utils/helpers/di/injectable_config.dart';
 import 'core/utils/helpers/firebase_messaging_service.dart';
@@ -51,7 +51,7 @@ GoRouter.of(navigatorKey.currentContext!).go("/specific_screen");
       child: BlocBuilder<PreferenceBloc, PreferenceState>(
         builder: (context, state) {
             return MaterialApp.router(
-              routerConfig: router,    
+            //  routerConfig: appRouter.config(),    
               localizationsDelegates: const [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
