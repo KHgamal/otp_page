@@ -1,10 +1,9 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
-import '../models/place.dart';
-import '../models/place_directions.dart';
-import '../models/place_suggestion.dart';
-
+import '../models/map/place.dart';
+import '../models/map/place_directions.dart';
+import '../models/map/place_suggestion.dart';
 
 part 'api_service.g.dart';
 
@@ -21,7 +20,7 @@ abstract class ApiService {
       );
 
   @GET("/place/autocomplete/json")
-  Future<List<PlaceSuggestion>> fetchSuggestions(
+  Future<PlaceAutocompleteResponse> fetchSuggestions(
       @Query("input") String place,
       @Query("types") String types,
       @Query("components") String components,

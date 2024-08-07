@@ -4,7 +4,7 @@ import 'package:otp_page/features/profile/UI/widgets/header.dart';
 
 import '../../../../core/common/styles/app_colors.dart';
 import '../../../../core/utils/helpers/di/app_module.dart';
-import '../../data/models/profile_info.dart';
+import '../../data/models/profile/profile_info.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

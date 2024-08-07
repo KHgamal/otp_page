@@ -1,6 +1,6 @@
 import 'package:otp_page/features/otp/data/models/models.dart';
 import 'package:otp_page/features/otp/domain/usecase/verify_otp_parameters.dart';
-import 'package:otp_page/features/profile/data/models/response.dart';
+import 'package:otp_page/features/profile/data/models/profile/response.dart';
 
 import '../../domain/repository/repository.dart';
 import '../../domain/usecase/send_otp_parameters.dart';

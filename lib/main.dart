@@ -51,6 +51,7 @@ GoRouter.of(navigatorKey.currentContext!).go("/specific_screen");
       child: BlocBuilder<PreferenceBloc, PreferenceState>(
         builder: (context, state) {
             return MaterialApp.router(
+               routerConfig: router,   
             //  routerConfig: appRouter.config(),    
               localizationsDelegates: const [
                 S.delegate,

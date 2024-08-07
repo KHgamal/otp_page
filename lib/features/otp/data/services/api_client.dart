@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-import '../../../profile/data/models/response.dart';
+import '../../../profile/data/models/profile/response.dart';
 import '../models/models.dart';
 part 'api_client.g.dart';
 

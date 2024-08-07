@@ -12,12 +12,14 @@ class MapsEvent with _$MapsEvent {
     required String sessionToken,
   }) = GetPlaceLocation;
 
-  const factory MapsEvent.getDirections({
-    required LatLng origin,
-    required LatLng destination,
+  const factory MapsEvent.getDirections({required LatLng origin,
+required LatLng destination,
   }) = GetDirections;
-  const factory MapsEvent.buildCameraNewPosition() = BuildCameraNewPosition;
-  const factory MapsEvent.buildSearchedPlaceMarker() = BuildSearchedPlaceMarker;
+  
+  const factory MapsEvent.initializeCameraPosition() = InitializeCameraPosition;
   const factory MapsEvent.goToMyCurrentLocation() = GoToMyCurrentLocation;
   const factory MapsEvent.goToMySearchedForLocation() = GoToMySearchedForLocation;
+const factory MapsEvent.buildSearchedPlaceMarker() = BuildSearchedPlaceMarker;
+ const factory MapsEvent.updateMarkers(Set<Marker> markers) = UpdateMarkers;
+
 }

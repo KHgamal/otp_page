@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/errors/dio_exception.dart';
 import 'package:otp_page/features/otp/domain/usecase/send_use_case.dart';
 import 'package:otp_page/features/otp/domain/usecase/verify_use_case.dart';
-import 'package:otp_page/features/profile/data/models/profile.dart';
+import 'package:otp_page/features/profile/data/models/profile/profile.dart';
 
 import '../../../../../../core/utils/helpers/di/injectable_config.dart';
 import '../../../../../../core/utils/helpers/shared_preferences_service.dart';

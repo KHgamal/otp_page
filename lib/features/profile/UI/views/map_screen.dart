@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:otp_page/core/utils/helpers/di/app_module.dart';
+import 'package:otp_page/features/profile/UI/controller/bloc/map_bloc.dart';
 import 'package:otp_page/features/profile/UI/widgets/map_widget.dart';
 import 'package:otp_page/features/profile/UI/widgets/search_field.dart';
+
 /*   Future<void> getMyCurrentLocation() async {
     position =
         await LocationHelper.handleLocationPermission(context).whenComplete(() {
@@ -15,16 +17,14 @@ class MapScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
     return BlocProvider(
-      create: (context) => mapsBloc,
-      child: SafeArea(
+      create: (context) => mapsBloc..add(const InitializeCameraPosition()),
+      child:const SafeArea(
         child: Scaffold(
           body: Stack(
             children: [
-              MapWidget(myCurrentLocationCameraPosition:mapsBloc.myCurrentLocationCameraPosition),
-              SearchField( isPortrait: isPortrait)
+              MapWidget(),
+              SearchField()
             ],
           ),
         ),

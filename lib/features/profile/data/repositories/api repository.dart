@@ -2,9 +2,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/common/strings.dart';
-import '../models/place.dart';
-import '../models/place_directions.dart';
-import '../models/place_suggestion.dart';
+import '../models/map/place.dart';
+import '../models/map/place_directions.dart';
+import '../models/map/place_suggestion.dart';
 import '../services/api_service.dart';
 @injectable
 class PlacesWebservices {
@@ -12,9 +12,8 @@ class PlacesWebservices {
 
   PlacesWebservices({required this.apiService});
 
-  Future<List<PlaceSuggestion>> fetchSuggestions(
+  Future<PlaceAutocompleteResponse> fetchSuggestions(
       String place, String sessionToken) async {
-    try {
       final suggestions = await apiService.fetchSuggestions(
         place,
         'address',
@@ -23,10 +22,7 @@ class PlacesWebservices {
         sessionToken,
       );
       return suggestions;
-    } catch (error) {
-      print(error.toString());
-      return [];
-    }
+    
   }
 
   Future<Place> getPlaceLocation(String placeId, String sessionToken) async {

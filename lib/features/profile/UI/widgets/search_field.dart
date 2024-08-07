@@ -3,18 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:otp_page/core/utils/helpers/di/app_module.dart';
 import 'package:otp_page/features/profile/UI/controller/bloc/map_bloc.dart';
+import 'package:otp_page/features/profile/UI/widgets/place_item.dart';
 import 'package:uuid/uuid.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
     super.key,
-    required this.isPortrait,
   });
-
-  final bool isPortrait;
 
   @override
   Widget build(BuildContext context) {
+    final isPortrait =MediaQuery.of(context).orientation == Orientation.portrait;
     return FloatingSearchBar(
       shadowColor: Colors.black.withOpacity(0.25),
       controller: mapsBloc.controller,
@@ -53,59 +52,49 @@ class SearchField extends StatelessWidget {
         return ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: BlocConsumer<MapsBloc, MapsState>(
-            listener: (context, state) {
-            /* if (state is PlaceLocationLoaded) {
-                              selectedPlace = (state).place;
-                              goToMySearchedForLocation();
-                              getDirections();
+            listener: (context, state) {                          
+                          if (state is PlaceLocationLoaded) {
+                              mapsBloc.selectedPlace = (state).place;
+                              
+                              mapsBloc.add(const MapsEvent.goToMySearchedForLocation());
+                              // getDirections();
                             }
-                          },*/
+                          },
            /*  if (state is DirectionsLoaded) {
           placeDirections = (state).placeDirections;
           getPolylinePoints();
         }*/              
-            },
             builder: (context, state) {
-              return const Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  /*
-                            if (state is PlacesLoaded) {
-                              places = (state).places;
-                              if (places.length != 0) {
+               if (state is SuggestionsLoaded) {
+                              mapsBloc.places = (state).suggestions;
+                              if (mapsBloc.places.isNotEmpty) {
                                 return ListView.builder(
                             itemBuilder: (ctx, index) {
                               return InkWell(
                                 onTap: () async {
-                    placeSuggestion = places[index];
-                    controller.close();
-                    mapsBloc.add(MapsEvent.GetPlaceLocation(
-                              place: query, sessionToken: const Uuid().v4())),
-                                 // getSelectedPlaceLocation(); 
-                    polylinePoints.clear();
-                    removeAllMarkersAndUpdateUI(); // markers.clear()
+                   mapsBloc.placeSuggestion =mapsBloc.places[index];
+                    mapsBloc.controller.close();
+                    mapsBloc.add(MapsEvent.getPlaceLocation(
+                      placeId: mapsBloc.placeSuggestion.placeId,
+                       sessionToken: const Uuid().v4()));                       
+                    //polylinePoints.clear();
+                   //  mapsBloc.markers.clear(); 
                                 },
                                 child: PlaceItem(
-                    suggestion: places[index],
+                    suggestion: mapsBloc.places[index],
                                 ),
                               );
                             },
-                            itemCount: places.length,
+                            itemCount: mapsBloc.places.length,
                             shrinkWrap: true,
                             physics: const ClampingScrollPhysics());
                               } else {
                                 return Container();
                               }
-                            } else {
+                            }
+                             else {
                               return Container();
                             }
-                         */
-                  /*    buildSuggestionsBloc(),
-                               buildSelectedPlaceLocationBloc(),
-                               buildDirectionsBloc(), */
-                ],
-              );
             },
           ),
         );

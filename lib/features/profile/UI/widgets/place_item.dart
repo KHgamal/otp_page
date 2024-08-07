@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otp_page/features/profile/data/models/place_suggestion.dart';
+import 'package:otp_page/features/profile/data/models/map/place_suggestion.dart';
 
 class PlaceItem extends StatelessWidget {
   final PlaceSuggestion suggestion;

@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../domain/entity.dart';
-import 'profile.dart'; // Adjust the import based on your project structure
-import 'data.dart';    // Adjust the import based on your project structure
+import 'profile/profile.dart'; // Adjust the import based on your project structure
+import 'profile/data.dart';    // Adjust the import based on your project structure
 
 class ProfileEntityConverter implements JsonConverter<ProfileEntity, Map<String, dynamic>> {
   const ProfileEntityConverter();
