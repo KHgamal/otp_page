@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
 GoRouter.of(navigatorKey.currentContext!).go("/specific_screen"); 
       }
     });
+   // createCustomMarker();
   }
   @override
   Widget build(BuildContext context) {

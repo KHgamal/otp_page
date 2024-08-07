@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_maps_cluster_manager_2/google_maps_cluster_manager_2.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -43,21 +44,23 @@ class MapsBloc extends Bloc<MapsEvent, MapsState> {
     zoom: 10,
   );
 
+  BitmapDescriptor? customIcon;
+
   late ClusterManager clusterManager;
 List<MarkerData> placeList = [
-  MarkerData(id:1, type: 1, name: "Example Place1", latLng: LatLng(38.417392, 27.163635)),
-  MarkerData(id:2, type: 0, name: "Example Place2", latLng: LatLng(38.429227, 27.203803)),
-  MarkerData(id:3, type: 1, name: "Example Place3", latLng: LatLng(38.444287, 27.187667)),
-  MarkerData(id:4, type: 0, name: "Example Place4", latLng: LatLng(38.468483, 27.174278)),
-  MarkerData(id:5, type: 1, name: "Example Place5", latLng: LatLng(38.447245, 27.250152)),
-  MarkerData(id:6, type: 0, name: "Example Place6", latLng: LatLng(38.477622, 27.212043)),
-  MarkerData(id:7, type: 1, name: "Example Place7", latLng: LatLng(38.446976, 27.230239)),
-  MarkerData(id:8, type: 0, name: "Example Place8", latLng: LatLng(38.482191, 27.213416)),
-  MarkerData(id:9, type: 1, name: "Example Place9", latLng: LatLng(38.449127, 27.201400)),
-  MarkerData(id:10, type: 1, name: "Example Place10", latLng: LatLng(38.467946, 27.215476)),
+  MarkerData(id:1, type: 1, name: "Example Place1", latLng: const LatLng(38.417392, 27.163635)),
+  MarkerData(id:2, type: 0, name: "Example Place2", latLng: const LatLng(38.429227, 27.203803)),
+  MarkerData(id:3, type: 1, name: "Example Place3", latLng: const LatLng(38.444287, 27.187667)),
+  MarkerData(id:4, type: 0, name: "Example Place4", latLng: const LatLng(38.468483, 27.174278)),
+  MarkerData(id:5, type: 1, name: "Example Place5", latLng: const LatLng(38.447245, 27.250152)),
+  MarkerData(id:6, type: 0, name: "Example Place6", latLng: const LatLng(38.477622, 27.212043)),
+  MarkerData(id:7, type: 1, name: "Example Place7", latLng: const LatLng(38.446976, 27.230239)),
+  MarkerData(id:8, type: 0, name: "Example Place8", latLng: const LatLng(38.482191, 27.213416)),
+  MarkerData(id:9, type: 1, name: "Example Place9", latLng: const LatLng(38.449127, 27.201400)),
+  MarkerData(id:10, type: 1, name: "Example Place10", latLng: const LatLng(38.467946, 27.215476)),
 ];
 
-  MapsBloc({required this.placesWebservices}) : super(const MapsState.initial()) {
+  MapsBloc({required this.placesWebservices}) : super(const MapsState.initial())  {
           clusterManager = ClusterManager<MarkerData>(
       placeList, // Replace this with your list of MarkerData
       _updateMarkers,
@@ -84,7 +87,7 @@ List<MarkerData> placeList = [
     return Marker(
       markerId: MarkerId(cluster.isMultiple ? cluster.getId() : cluster.items.single.id.toString()),
       position: cluster.location,
-      icon: cluster.isMultiple ? BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueOrange) : BitmapDescriptor.defaultMarker,
+      icon: cluster.isMultiple ? customIcon! : BitmapDescriptor.defaultMarker,
       infoWindow: InfoWindow(
         title: cluster.items.isNotEmpty ? cluster.items.first.name : 'No name',
         snippet: 'Cluster with ${cluster.count} items',
@@ -94,6 +97,11 @@ List<MarkerData> placeList = [
 
   // Done
   Future<void> _onInitializeCameraPosition(InitializeCameraPosition event, Emitter<MapsState> emit) async {
+      customIcon = await BitmapDescriptor.asset(const ImageConfiguration(
+        size: Size(50, 20)
+      ),
+      'assets/images/map_marker_white.png', // Path to your custom marker image
+    );
     emit(MapsState.cameraPositionInitialized(myCurrentLocationCameraPosition));
   }
 
@@ -147,7 +155,7 @@ Future<void> _onBuildSearchedPlaceMarker(BuildSearchedPlaceMarker event, Emitter
       // Build the marker for the searched place
       searchedPlaceMarker = Marker(
         position: searchedPlaceData.latLng,
-        markerId: MarkerId('searchedPlace'),
+        markerId: const MarkerId('searchedPlace'),
         onTap: () {
           isSearchedPlaceMarkerClicked = true;
           isTimeAndDistanceVisible = true;
